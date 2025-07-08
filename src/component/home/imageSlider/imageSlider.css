@@ -1,0 +1,33 @@
+.imageSlider {
+    /* width: 600px;
+    height: 300px; */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    z-index: 1;
+    
+}
+.slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    &.active {
+      transform: translateX(0);
+    }
+    &:not(.active) {
+      transform: translateX(100%);
+    }
+}
+.imageSlider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .imageSlider .image {
+    width: 100%;
+    height: calc(100vh - 140px);    /* 커서 안움직이게 하려고 대충 때려 맞췄는데.. 이거 해결법 알면 해줘 */
+    object-fit: contain;
+    display: block;
+  }
+
+  

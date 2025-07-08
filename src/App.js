@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './component/home.js';
+import Home from './component/home/home.js';
 
-
-//hello commit 
 function App() {
   return (
     <div className="home">
