@@ -74,8 +74,8 @@ feel/
 ├── public/
 ├── src
 │   ├── /component
-│		│		├── about     # 학생회 소개
-│		│		├── notice    # 알림
+│   │   ├── about     # 학생회 소개
+│   │   ├── notice    # 알림
 │		│		├── benefits  # 제휴 혜택
 │		│		├── contact   # 문의
 │		│		├── resources # 자료실
