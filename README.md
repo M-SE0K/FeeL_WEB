@@ -76,10 +76,10 @@ feel/
 │   ├── /component
 │   │   ├── about     # 학생회 소개
 │   │   ├── notice    # 알림
-│		│		├── benefits  # 제휴 혜택
-│		│		├── contact   # 문의
-│		│		├── resources # 자료실
-│		│		├── headerBar # 헤더바
+│   │   ├── benefits  # 제휴 혜택
+│   │   ├── contact   # 문의
+│   │   ├── resources # 자료실
+│   │   ├── headerBar # 헤더바
 │   │   ├── home   # 메인 화면
 │   │   │   ├── imageSlider #이미지 슬라이더
 │   │
