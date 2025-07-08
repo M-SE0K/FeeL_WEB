@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# 📄 공과대학 웹 페이지 개발
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 페이지 링크
 
-## Available Scripts
+> **`배포 링크`** [**https://m-se0k.github.io/FeeL_WEB/**](https://m-se0k.github.io/FeeL_WEB/)
+> 
+> 
+> [공과대학 웹 페이지 개발 ](https://www.notion.so/1e3ed78e319f80b9a1b2c4b9c8ef387b?pvs=21) 
+> 
+> 마지막에는 git 계정 하나 파서 거기다가 플젝 파일 옮겨서 URL 링크 수정하는 방식으로
+> 
+> **ex) `https://FeeL.github.io/FeeL/`**
+> 
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 개발 환경 설정
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### react 설치
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+npm install -g create-react-app
+npx create-react-app [프로젝트명] // 이건 근데 내가 깔아서 pull해서 쓰는 거라 안해도 될듯 함
+```
 
-### `npm test`
+### 프로젝트 빌드 및 실행
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm run build
+npm start
+```
 
-### `npm run build`
+### git 로컬, 원격 연결
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git init
+git add .
+git remote add origin https://github.com/M-SE0K/FeeL_WEB.git
+git push -u origin [브랜치 명]
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### github branch 구조
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> https://devocean.sk.com/blog/techBoardDetail.do?ID=165571&boardType=techBlog
+사용하는 이유는 동일한 시간대에 서로 다른 기능 개발시 병합시 번거로움을 덜고자 함
+> 
+- **`main` : 최종 확인 후 배포 되는 브랜치**
+- **`develop` : 각 기능별 브랜치 병합 이후 발생하는 오류 수정**
+- **`feature[기능명]` : 각 기능별 구현하는 브랜치. (우리는 main을 pull 해와서 `feature`최신화하는 것으로)**
 
-### `npm run eject`
+```jsx
+git checkout [브랜치명] -> 브랜치간 이동 명령어
+git branch [브랜치명] -> 브랜치 생성 명령어
+git branch -r : 원격저장소 (깃허브) 브랜치 상태 확인
+git branch -a : 로컬저장소 (내 컴퓨터) 브랜치 상태 확인
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### gh-pages 배포
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> https://usage.tistory.com/168
+> 
+> 
+> https://velog.io/@blackpaint/React-GitHub-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80%EB%8D%B0-%EC%99%9C-README%EA%B0%80-%EB%9C%A8%EB%8A%94%EA%B1%B0%EC%A3%A0[https://velog.io/@blackpaint/React-GitHub-배포하고-싶은데-왜-README가-뜨는거죠](https://velog.io/@blackpaint/React-GitHub-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80%EB%8D%B0-%EC%99%9C-README%EA%B0%80-%EB%9C%A8%EB%8A%94%EA%B1%B0%EC%A3%A0)
+> 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**→ 배포 이후 README 뜨는 거 확인 후 두 번째 링크 참고해서 수정함**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 구조
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+feel/
+├── node_modules/
+├── public/
+├── src
+│   ├── /component
+│				├── about     # 학생회 소개
+│				├── notice    # 알림
+│				├── benefits  # 제휴 혜택
+│				├── contact   # 문의
+│				├── resources # 자료실
+│				├── headerBar # 헤더바
+│       ├── home.js   # 메인 화면
+│   
+│  
+│  
+│  
+│  
+│  
+│  
+├── .gitignore
+├── pakage.json
+├── pakage-lock.json
+├── READE.md
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **`headerBar`**
 
-### Code Splitting
+> **오류명 : `‘Can’t resolve ‘react-roucter-dom’` 
+https://developer-ping9.tistory.com/212
+→ react-route-dom 설치로 해결**
+> 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```jsx
+**npm i -s react-router-dom**
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```jsx
+function HeaderBar() {
+  return (
+    <header className="header-bar">
+      <nav className="nav-menu">
+        <ul className="nav-list">
+          <li><Link to="/about">학생회소개</Link></li>
+          <li><Link to="/notice">알림</Link></li>
+          <li><Link to="/benefits">제휴 혜택</Link></li>
+          <li><Link to="/contact">문의</Link></li>
+          <li><Link to="/resources">자료실</Link></li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+```
