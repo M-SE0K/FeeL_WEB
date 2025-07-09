@@ -1,4 +1,14 @@
-.slider-container{
-    width: 100px;
-    height: 80px;
+.slider-container {
+    
+    height: 40vh !important;
+    object-fit: contain;
+    width: 100%;
 }
+.image {
+    width: 100%;          /* 가로 꽉 채우기 */
+    height: 100%;         /* 컨테이너 높이 맞추기 */
+    object-fit: cover;    /* 비율 유지 + 자르기 허용 */
+    object-position: center; /* 중앙 기준 자르기 */
+    display: block;
+}
+  
