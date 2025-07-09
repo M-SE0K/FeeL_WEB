@@ -25,8 +25,8 @@ function ImageSlider({slides}){
     }
     return (
         <div className='imageSlider'>
-          <IoIosArrowBack className='imageSlider-arrow left' size='30' onClick={prevSlide} />
-          <IoIosArrowForward className='imageSlider-arrow right' size='30' onClick={nextSlide} />
+          <IoIosArrowBack className='imageSliderButton-left' size='30' onClick={prevSlide} />
+          <IoIosArrowForward className='imageSliderButton-right' size='30' onClick={nextSlide} />
           {slides.map((slide, index) => {
             return (
               <div

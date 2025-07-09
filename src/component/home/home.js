@@ -5,6 +5,7 @@ import image1 from '../../img/imageSlider1.png';
 import image2 from '../../img/imageSlider2.png';
 import image3 from '../../img/imageSlider3.png';
 import ImageSlider from './imageSlider/imageSlider.js';
+import './home.css';
 
 function Home() {
   const slides = [{image: image1}, {image: image2}, {image: image3}];
