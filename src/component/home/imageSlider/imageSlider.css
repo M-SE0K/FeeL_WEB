@@ -1,6 +1,7 @@
 .imageSlider {
     /* width: 600px;
     height: 300px; */
+    background-position: top;
     position: relative;
     overflow: hidden;
     margin-bottom: 20px;
@@ -26,8 +27,36 @@
   .imageSlider .image {
     width: 100%;
     height: calc(100vh - 140px);    /* 커서 안움직이게 하려고 대충 때려 맞췄는데.. 이거 해결법 알면 해줘 */
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
     display: block;
   }
 
-  
+  /* 화살표 버튼 공통 스타일 */
+.imageSliderButton-left,
+.imageSliderButton-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3); /* 약간 어두운 배경 */
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.imageSliderButton-left:hover,
+.imageSliderButton-right:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 좌우 위치 지정 */
+.imageSliderButton-left {
+  left: 20px;
+}
+
+.imageSliderButton-right {
+  right: 20px;
+}
