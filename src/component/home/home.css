@@ -1,6 +1,5 @@
 .slider-container {
-    
-    height: 40vh !important;
+    height: 55vh !important;
     object-fit: contain;
     width: 100%;
 }
@@ -11,4 +10,10 @@
     object-position: center; /* 중앙 기준 자르기 */
     display: block;
 }
-  
+.cards-container{
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}

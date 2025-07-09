@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import './headerBar.css';
 import logoImg from '../../img/logo192.png';
-
+import Home from '../home/home.js'
 function HeaderBar() {
   return (
     <>
@@ -28,7 +28,7 @@ function HeaderBar() {
         <Route path="/benefits" element={<div>제휴 혜택 컴포넌트</div>} />
         <Route path="/contact" element={<div>문의 컴포넌트</div>} />
         <Route path="/resources" element={<div>자료실 컴포넌트</div>} />
-        <Route path="/" element={<div>홈 컴포넌트</div>} />
+        <Route path="/" element={<div></div>} />
       </Routes>
     </>
   );

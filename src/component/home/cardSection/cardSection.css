@@ -1,0 +1,35 @@
+.card-section {
+    display: flex;
+    min-height: 37vh;
+    justify-content: center;
+    align-items: stretch;
+    color: white;
+    gap: 0;
+  }
+  .card1, .card2, .card3, .card4 {
+    display: flex;                 /* ⬅️ flex 컨테이너로 지정 */
+    flex-direction: column;       /* 세로 방향으로 콘텐츠 배치 */
+    justify-content: center;      /* 수직 중앙 정렬 */
+    align-items: center;          /* 수평 중앙 정렬 */  
+    width: 100%;                  /* 가로 전체 채우기 */
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    border-radius: 0px;
+    
+    transition: transform 0.3s ease;
+  }
+  .p{
+    font-size: 5rem;
+  }
+  .card1 {  background-color: #5a91d4; /* 공지사항 */   }
+  .card2 {  background-color: #9bbbd4; /* 제휴지도 */   }
+  .card3 {  background-color: #3f72af; /* FAQ  */     }
+  .card4 {  background-color: #5093df; /* 민원접수 */   }
+  
+  .card1:hover,
+  .card2:hover,
+  .card3:hover,
+  .card4:hover {
+    transform: scale(1.15);
+  }
