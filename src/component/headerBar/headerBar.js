@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './headerBar.css';
 import logoImg from '../../img/logo192.png';
-import Home from '../home/home.js'
-function HeaderBar() {
+
+function HeaderBar({isMobile}) {
   return (
     <>
       <header className="header-bar">
@@ -21,15 +21,6 @@ function HeaderBar() {
           </ul>
         </nav>
       </header>
-
-      <Routes>
-        <Route path="/about" element={<div>학생회소개 컴포넌트</div>} />
-        <Route path="/notice" element={<div>알림 컴포넌트</div>} />
-        <Route path="/benefits" element={<div>제휴 혜택 컴포넌트</div>} />
-        <Route path="/contact" element={<div>문의 컴포넌트</div>} />
-        <Route path="/resources" element={<div>자료실 컴포넌트</div>} />
-        <Route path="/" element={<div></div>} />
-      </Routes>
     </>
   );
 }

@@ -10,42 +10,42 @@
     padding-top: 10px;
     padding-bottom: 10px;
     align-items: center;
-  }
+}
 
-  .logo{
+.logo{
     padding-left: 25px;
     display: flex;
     align-items: center; /* ✅ 로고와 텍스트 정렬 */
     gap: 20px;
-  }
+}
 
-  .logo-title {
+.logo-title {
     gap: 5rem;
     font-weight: bold;
     font-size: 2.2rem;
     color: white;
     text-decoration: none;
     transition: color 0.2s ease;
-  }
+}
   
-  .logo-title:hover {
+.logo-title:hover {
     color: #aaccff;
     text-decoration: underline;
-  }
+}
   
-  .logo-img{
+.logo-img{
     margin-left: 10px;
     width: 50px;
-  }
+}
 
-  .nav-menu {
+.nav-menu {
     display: flex;
     justify-content: center;
     padding: 1rem 0;
     margin-right: 100px;
-  }
+}
   
-  .nav-list {
+.nav-list {
     list-style: none;
     display: flex;
     gap: 3.5rem;
@@ -53,16 +53,73 @@
     padding: 0;
     font-weight: bold;
     font-size: 1.5rem;
-  }
+}
   
-  .nav-list li a {
+.nav-list li a {
     color: white;
     text-decoration: none;
     transition: color 0.2s ease;
-  }
+}
   
-  .nav-list li a:hover {
+.nav-list li a:hover {
     color: #aaccff;
     text-decoration: underline;
-  }
-    
+}
+
+@media (max-width: 767px) {
+    .header-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 15px;
+    }
+  
+    .logo {
+      padding-left: 0;
+      gap: 10px;
+    }
+  
+    .logo-img {
+      width: 35px;
+      margin-left: 0;
+    }
+  
+    .logo-title {
+      font-size: 1.2rem;
+    }
+  
+    .nav-menu {
+      display: none; /* 기본적으로 숨김 */
+      width: 100%;
+      flex-direction: column;
+      padding: 0;
+      margin: 10px 0 0 0;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.1rem;
+      padding-left: 0;
+      margin-right: 0;
+    }
+  
+    .nav-list li {
+      margin-left: 0;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      align-self: flex-end;
+      cursor: pointer;
+      margin-top: -40px; /* 로고 오른쪽에 위치하도록 조정 */
+    }
+  
+    .mobile-nav-open {
+      display: flex !important; /* 햄버거 열렸을 때 메뉴 보여줌 */
+    }
+}
+  

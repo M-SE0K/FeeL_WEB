@@ -1,1 +1,8 @@
-<div>notice</div>
+
+function Notice(){
+    return(
+        <div>Notice</div>
+    );
+}
+
+export default Notice;
