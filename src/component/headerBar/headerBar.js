@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
+
 import './headerBar.css';
 import logoImg from '../../img/logo192.png';
 
@@ -30,7 +31,7 @@ function HeaderBar({isMobile}) {
         <>
           <button className="menu-button" onClick={() => setMenuOpen(true)} aria-label="메뉴 열기">
             <HiMenu />
-          </button>
+          </button>=-
           {/* 사이드 메뉴 오픈 시 표시 */}
           {menuOpen && (
             <div className="mobile-menu-overlay">
