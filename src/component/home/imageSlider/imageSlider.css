@@ -1,45 +1,38 @@
 .imageSlider {
-    /* width: 600px;
-    height: 300px; */
-    background-position: top;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 20px;
-    z-index: 1;
-    
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%; /* 상위에서 vh 등으로 비율 고정 */
 }
-.slide {
-    display: flex;
-    transition: transform 0.5s ease;
-    &.active {
-      transform: translateX(0);
-    }
-    &:not(.active) {
-      transform: translateX(100%);
-    }
-}
-.imageSlider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  
-  .imageSlider .image {
-    width: 100%;
-    height: calc(100vh - 140px);    /* 커서 안움직이게 하려고 대충 때려 맞췄는데.. 이거 해결법 알면 해줘 */
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
 
-  /* 화살표 버튼 공통 스타일 */
+.slide {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide.active {
+  transform: translateX(0);
+}
+
+.slide:not(.active) {
+  transform: translateX(100%);
+}
+
+.image {
+  display: block;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* 화살표 버튼 공통 */
 .imageSliderButton-left,
 .imageSliderButton-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3); /* 약간 어두운 배경 */
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 50%;
   color: white;
@@ -52,7 +45,6 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* 좌우 위치 지정 */
 .imageSliderButton-left {
   left: 20px;
 }

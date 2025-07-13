@@ -1,35 +1,66 @@
 .card-section {
-    display: flex;
-    min-height: 37vh;
-    justify-content: center;
-    align-items: stretch;
-    color: white;
-    gap: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  color: white;
+  gap: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* 공통 카드 스타일 */
+.card1, .card2, .card3, .card4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%; /* 기본: 4개 가로 나열 (PC 환경) */
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: white;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+/* 카드 색상 지정 */
+.card1 { background-color: #5a91d4; } /* 공지사항 */
+.card2 { background-color: #9bbbd4; } /* 제휴지도 */
+.card3 { background-color: #3f72af; } /* FAQ */
+.card4 { background-color: #5093df; } /* 민원접수 */
+
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover {
+  transform: scale(1.15);
+}
+
+.p {
+  font-size: 5rem;
+}
+
+/* 📱 모바일: 2 x 2 Grid 레이아웃 */
+@media (max-width: 767px) {
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 두 개의 열 */
+    grid-template-rows: repeat(2, 1fr);    /* 두 개의 행 */
+    width: 100%;
   }
+
   .card1, .card2, .card3, .card4 {
-    display: flex;                 /* ⬅️ flex 컨테이너로 지정 */
-    flex-direction: column;       /* 세로 방향으로 콘텐츠 배치 */
-    justify-content: center;      /* 수직 중앙 정렬 */
-    align-items: center;          /* 수평 중앙 정렬 */  
-    width: 100%;                  /* 가로 전체 채우기 */
+    width: 100%;   /* grid 내에서는 너비 자동 */
+    padding: 1rem;
+  }
+}
+
+/* 🧾 태블릿: 2개씩 2열 (flex 유지 가능) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card1, .card2, .card3, .card4 {
+    width: 50%;
     padding: 2rem;
-    color: white;
-    text-align: center;
-    border-radius: 0px;
-    
-    transition: transform 0.3s ease;
   }
-  .p{
-    font-size: 5rem;
-  }
-  .card1 {  background-color: #5a91d4; /* 공지사항 */   }
-  .card2 {  background-color: #9bbbd4; /* 제휴지도 */   }
-  .card3 {  background-color: #3f72af; /* FAQ  */     }
-  .card4 {  background-color: #5093df; /* 민원접수 */   }
-  
-  .card1:hover,
-  .card2:hover,
-  .card3:hover,
-  .card4:hover {
-    transform: scale(1.15);
-  }
+}

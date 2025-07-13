@@ -1,0 +1,104 @@
+
+/* 전체 배경 스타일 */
+.calendar-wrapper {
+  display: flex;
+  background-color: #5489b5;
+  padding: 2rem;
+  border: 1px solid white;
+  color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.calendar-left {
+  flex: 1;
+}
+
+.react-calendar {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+}
+
+.react-calendar__tile {
+  height: 40px;
+  text-align: center;
+  border: none;
+  margin: 2px;
+  font-weight: 400;
+  color: white;
+  background: none;
+}
+
+.react-calendar__tile--now {
+  background: none;
+  color: white;
+  font-weight: bold;
+}
+
+.highlighted-tile {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
+/* 일정 박스 */
+.calendar-right {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.schedule-box {
+  background-color: #79a6db;
+  padding: 1rem;
+  border: 2px solid white;
+  color: white;
+}
+
+.schedule-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid white;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.schedule-list li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.schedule-list li span {
+  margin-left: 1rem;
+  font-weight: normal;
+}

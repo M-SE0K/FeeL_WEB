@@ -2,4 +2,11 @@
     font-size: 1rem;
     font-weight: bold;
 }
-  
+@media (max-width: 767px) {
+    .FaqCard-text,
+    .AllianceCard-text,
+    .NoticeCard-text,
+    .ReportCard-text {
+      display: none;
+    }
+  }
