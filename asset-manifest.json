@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/FeeL_WEB/static/css/main.e1dafdf6.css",
-    "main.js": "/FeeL_WEB/static/js/main.c04646e8.js",
+    "main.css": "/FeeL_WEB/static/css/main.ffe66cc8.css",
+    "main.js": "/FeeL_WEB/static/js/main.7b5a9355.js",
     "static/js/453.addd199c.chunk.js": "/FeeL_WEB/static/js/453.addd199c.chunk.js",
     "static/media/imageSlider2.png": "/FeeL_WEB/static/media/imageSlider2.8066515c68bf2f00ae54.png",
     "static/media/imageSlider1.png": "/FeeL_WEB/static/media/imageSlider1.1ff808b74e87ed05fa1f.png",
     "index.html": "/FeeL_WEB/index.html",
-    "main.e1dafdf6.css.map": "/FeeL_WEB/static/css/main.e1dafdf6.css.map",
-    "main.c04646e8.js.map": "/FeeL_WEB/static/js/main.c04646e8.js.map",
+    "main.ffe66cc8.css.map": "/FeeL_WEB/static/css/main.ffe66cc8.css.map",
+    "main.7b5a9355.js.map": "/FeeL_WEB/static/js/main.7b5a9355.js.map",
     "453.addd199c.chunk.js.map": "/FeeL_WEB/static/js/453.addd199c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1dafdf6.css",
-    "static/js/main.c04646e8.js"
+    "static/css/main.ffe66cc8.css",
+    "static/js/main.7b5a9355.js"
   ]
 }
