@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import HeaderBar from '../headerBar/headerBar.js';
 import './home.css';
 
@@ -10,41 +10,25 @@ import ImageSlider from './imageSlider/imageSlider.js';
 
 import CardSection from './cardSection/cardSection.js';
 
-import About from '../about/about.js';
-import Benefits from '../benefits/benefits.js';
-import Contact from '../contact/contact.js';
-import Notice from '../notice/notice.js';
-import Resources from '../resources/resources.js';
-
 import { useResponsive } from '../hooks/useResponsive.js';
 import { useLayoutResize } from '../hooks/useLayoutResize';
 
 import Kakao from './maps/kakao.js';
-import Banner from '../../img/banner.png';
+
 
 import CustomCalendar from './customCalendar/customCalendar.js';
 import { HiMenu } from 'react-icons/hi';
 
-import Intro from '../about/intro/intro.js';
+
 function Home() {
   const slides = [{image: image1}, {image: image2}, {image: image3}];
   const { isMobile, isTablet, isDesktop } = useResponsive();
   useLayoutResize();
     return(
-        <BrowserRouter>
           <div className="app-container">
-            <div id= "header-container" className='header-container'> 
-            <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
-              <Routes>
-                  <Route path="/about" element={ <About/> } />
-                  <Route path="/notice" element={ <Notice/>} />
-                  <Route path="/benefits" element={<Benefits/>} />
-                  <Route path="/contact" element={<Contact/>} />
-                  <Route path="/resources" element={<Resources/>} />
-                  <Route path="/" element={<div/>} />
-                  <Route path="/about/intro" element={<Intro/>} />
-                </Routes>
-            </div>
+            {/* <div id= "header-container" className='header-container'> 
+              <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
+            </div> */}
 
             <div className='first-screen'>
               {/* 여기까지가 pc로 한 화면으로 나오게 부탁드립니다.. */}
@@ -69,13 +53,7 @@ function Home() {
                 />
               </div>
             </div>
-
-
-            <div className='banner'>
-                <img src={Banner} className='banner-img' alt="배너"/>
-            </div>
           </div>
-        </BrowserRouter>
     );
 }
 

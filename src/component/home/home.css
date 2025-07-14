@@ -2,57 +2,57 @@ html, body, #root {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-.first-screen {
+  }
+  
+  /* 전체 앱 컨테이너 */
+  .app-container {
+    display: block;
+  }
+  
+  /* 첫 번째 화면: 이미지 슬라이더 + 카드 */
+  .first-screen {
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.header-container {
-    height: auto;
-}
-.image {
-    display: block;
-}
-.slider-container{
-    height: auto;
-}
-.cards-container{
-    display: block;
+  }
+  
+  /* 이미지 슬라이더 영역 */
+  .slider-container {
+    flex: 1;
+    min-height: 50%;
+  }
+  
+  /* 카드 섹션 */
+  .cards-container {
+    flex: 1;
     width: 100%;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    height: auto;
-    width: 100%;
-}
-
-
-.second-screen {
+  }
+  
+  /* 두 번째 화면: 지도 + 버튼 */
+  .second-screen {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
     padding: 2rem;
-    flex-wrap: wrap; /* 모바일 대응 */
+  }
   
-}
-
-.map-container {
-    height: 80vh;
-}
-
-.list-button {
-    padding-top: 5rem;
+  /* 지도 영역 */
+  .map-container {
+    flex: 1;
+    min-height: 70%;
+  }
+  
+  /* 목록 보기 버튼 */
+  .list-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
+  }
   
-.list-button button {
+  .list-button button {
     padding: 10px 20px;
     font-size: 1rem;
     font-weight: bold;
@@ -62,29 +62,33 @@ html, body, #root {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+  }
   
-.list-button button:hover {
+  .list-button button:hover {
     background-color: #005fcc;
-}
-
-
-.banner-img {
-    display: block;                /* 인라인 요소 여백 제거 */
-    width: 100%;                   /* 부모의 너비에 맞춤 */
-    height: auto;                  /* 비율 유지하면서 높이 자동 조정 */
-    max-width: 100%;              /* 확대 방지 */
-    object-fit: contain;          /* 이미지 전체를 보이게 (비율 유지) */
-}
-.banner {
+  }
+  
+  /* 세 번째 화면: 달력 */
+  .third-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 배너 */
+  .banner {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    background-color: #f5f5f5; /* 필요시 배경 추가 */
-}
-
-.list-button{
-    
-}
+    background-color: #f5f5f5;
+  }
+  
+  .banner-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  

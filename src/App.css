@@ -13,21 +13,29 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-container{
+  height: 10vh;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #f5f5f5; /* 필요시 배경 추가 */
+}
+.banner-img {
+  display: block;                /* 인라인 요소 여백 제거 */
+  width: 100%;                   /* 부모의 너비에 맞춤 */
+  height: auto;                  /* 비율 유지하면서 높이 자동 조정 */
+  max-width: 100%;              /* 확대 방지 */
+  object-fit: contain;          /* 이미지 전체를 보이게 (비율 유지) */
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
