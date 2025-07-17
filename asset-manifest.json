@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/FeeL_WEB/static/css/main.097c806e.css",
-    "main.js": "/FeeL_WEB/static/js/main.5f48b757.js",
+    "main.css": "/FeeL_WEB/static/css/main.48838c83.css",
+    "main.js": "/FeeL_WEB/static/js/main.6caab928.js",
     "static/js/453.addd199c.chunk.js": "/FeeL_WEB/static/js/453.addd199c.chunk.js",
     "static/media/logo192.png": "/FeeL_WEB/static/media/logo192.88e0be848683b8413608.png",
     "static/media/banner.png": "/FeeL_WEB/static/media/banner.2a49f8c374edcbfa3bdd.png",
+    "static/media/imageSlider4.jpg": "/FeeL_WEB/static/media/imageSlider4.a2bac50860f7ce36097a.jpg",
+    "static/media/imageSlider5.jpg": "/FeeL_WEB/static/media/imageSlider5.5ce79d6f2762f10e2a3f.jpg",
+    "static/media/imageSlider6.jpg": "/FeeL_WEB/static/media/imageSlider6.4143bd5d19586bccbd81.jpg",
     "static/media/imageSlider2.png": "/FeeL_WEB/static/media/imageSlider2.8066515c68bf2f00ae54.png",
     "static/media/imageSlider1.png": "/FeeL_WEB/static/media/imageSlider1.1ff808b74e87ed05fa1f.png",
     "index.html": "/FeeL_WEB/index.html",
-    "main.097c806e.css.map": "/FeeL_WEB/static/css/main.097c806e.css.map",
-    "main.5f48b757.js.map": "/FeeL_WEB/static/js/main.5f48b757.js.map",
+    "main.48838c83.css.map": "/FeeL_WEB/static/css/main.48838c83.css.map",
+    "main.6caab928.js.map": "/FeeL_WEB/static/js/main.6caab928.js.map",
     "453.addd199c.chunk.js.map": "/FeeL_WEB/static/js/453.addd199c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.097c806e.css",
-    "static/js/main.5f48b757.js"
+    "static/css/main.48838c83.css",
+    "static/js/main.6caab928.js"
   ]
 }
