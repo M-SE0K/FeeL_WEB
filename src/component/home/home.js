@@ -1,6 +1,4 @@
 import React from 'react';
-
-import HeaderBar from '../headerBar/headerBar.js';
 import './home.css';
 
 import image1 from '../../img/imageSlider1.png';

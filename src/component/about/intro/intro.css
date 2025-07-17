@@ -1,55 +1,76 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+
 /* 전체 컨테이너 */
 .intro-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     font-family: 'Noto Sans KR', sans-serif;
   }
   
-  /* 슬라이더 영역 - 추후 확장 */
-  .imageSlider-container {
-    
+.imageSlider-container{
     width: 100%;
-    height: 300px;
-    background-color: #e0e0e0;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  /* 회장 인사말 전체 레이아웃 */
-  .main-container {
-    display: flex;
-    flex-direction: row;
+    height: 35vh;
+    overflow: auto;
+}
 
-    padding: 2rem;
-    background-color: white;
-    border-top: 4px solid #003f87;
-    gap: 10rem;
-  }
-  
-  .image-container {
+.imageSlider .imageSliderButton-left,
+.imageSlider .imageSliderButton-right{
+    display: none;
+}
+
+.main-wrapper {
     width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    padding-bottom: 1.5rem;
-    flex: 4;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 6px;
-    z-index: 1;
-  }
+    min-height: 60vh;
+    padding: 0 4rem; /* main-container와 padding 동일하게 설정 */
+}
+.greeting-title {
+  height: auto;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* 회장 인사말 전체 레이아웃 */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  padding: 2rem;
+  background-color: white;
+  border-top: 4px solid #003f87;
+  gap: 10rem;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;       /* 수직 중앙 정렬 (선택) */
+}
+
+.left-container {
+  flex: 1;
+}
+.image-container {
+  width: 70%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-bottom: 1.5rem;
+
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  z-index: 0;
+}
   
   /* 타이틀 박스를 좌측 상단에 고정 */
   .title-box {
@@ -65,8 +86,8 @@
     text-align: left;
   }
   
-  /* 이름은 그대로 유지 */
-  .name {
+/* 이름은 그대로 유지 */
+.name {
     background-color: white;
     color: black;
     font-weight: bold;
@@ -80,47 +101,137 @@
   }
   
   /* 오른쪽 텍스트 */
-  .text-container {
-    width: 70%;
+  .right-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    flex:6;
+    flex: 1;
   }
   
+.h2-text1 {
+  color: #003f87;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+  
+.text-container p {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+  
+.text-container .quote {
+  color: #005fcc;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+  
+.text-container .sign {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+
+
+  .intro-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 60vh; /* 모바일에서는 고정된 100vh 제거 */
+  }
+
+  .imageSlider-container {
+    width: 100%;
+    height: 35vh !important; /* ✅ 덮어쓰기 강제 */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .imageSlider {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s ease;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    height: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 전체 채우되 비율 유지 */
+  }
+
+  .main-wrapper {
+    width: 100%;
+    padding: 0rem;
+  }
+
+  .main-container {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .greeting-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .left-container,
+  .right-container {
+    width: 100%;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 200px;
+    padding-bottom: 1rem;
+    max-width: none;
+  }
+
+  .image-container img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .title-box {
+    font-size: 1.2rem;
+    bottom: 2rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+  }
+
   .h2-text1 {
-    color: #003f87;
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
   }
-  
+
   .text-container p {
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.8;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
-  
-  .text-container .quote {
-    color: #005fcc;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
-  
+
   .text-container .sign {
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
   }
-  @media (max-width: 768px) {
-    .main-container {
-      flex-direction: column;
-    }
-  
-    .image-container,
-    .text-container {
-      width: 100%;
-    }
+
+  .text-container .quote {
+    font-size: 1rem;
+    text-align: center;
   }
-  
+}

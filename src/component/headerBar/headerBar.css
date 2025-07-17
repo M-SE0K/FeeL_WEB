@@ -9,6 +9,7 @@
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     align-items: center;
+    z-index: 9999;
 }
 .header-left {
   display: flex;
@@ -255,5 +256,52 @@
       color: #003f87; /* 파란색 텍스트 */
       text-decoration: none;
     }
+
+    
 }
   
+.mobile-nav-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-nav-button:hover {
+  background-color: white;
+  color: #003f87;
+  border-radius: 8px;
+}
+
+.mobile-submenu {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.mobile-submenu li a {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  padding-left: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.mobile-submenu li a:hover {
+  color: #aaccff;
+}
+/* 선택된 모바일 메뉴 버튼 */
+.mobile-nav-button.active {
+  background-color: white;
+  color: #003f87;
+  border-radius: 8px;
+}

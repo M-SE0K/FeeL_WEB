@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './component/home/home.js';
-import About from './component/about/about.js';
+
 import Benefits from './component/benefits/benefits.js';
 import Contact from './component/contact/contact.js';
 import Notice from './component/notice/notice.js';
@@ -18,23 +18,28 @@ function App() {
   useLayoutResize();
   return (
     <BrowserRouter>
-      <div className='header-container'>              
-        <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
-      </div>
+      <div className="app-container">
+        <div className='header-container'>              
+          <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
+        </div>
 
-      <Routes>
-        <Route path="/" element= {  <Home />  } />
-        <Route path="/FeeL_WEB" element= {  <Home />  } />
-        <Route path="/about" element={ <About/> } />
-        <Route path="/notice" element={ <Notice/>} />
-        <Route path="/benefits" element={<Benefits/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/resources" element={<Resources/>} />
-        <Route path="/about/intro" element={<Intro/>} />
-      </Routes>
-      <div className='banner-container'>
-          <img src={Banner} className='banner-img' alt="배너"/>
+        <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/FeeL_WEB" element={<Home />} />
+              <Route path="/notice" element={<Notice />} />
+              <Route path="/benefits" element={<Benefits />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/about/intro" element={<Intro />} />
+            </Routes>
+          </main>
+
+        <div className='banner-container'>
+            <img src={Banner} className='banner-img' alt="배너"/>
+        </div>
       </div>
+      
     </BrowserRouter>
   );
 }
