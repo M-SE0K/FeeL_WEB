@@ -3,7 +3,6 @@ html, body, #root {
   margin: 0;
 }
 
-
 /* 전체 컨테이너 */
 .intro-container {
     flex: 1;
@@ -15,9 +14,166 @@ html, body, #root {
   }
   
 .imageSlider-container{
-    width: 100%;
-    height: 35vh;
-    overflow: auto;
+    width: 100% !important;
+    height: 35vh !important;
+    overflow: hidden !important;
+    position: relative !important;
+    min-height: 300px !important;
+    max-height: 500px !important;
+}
+
+/* 분류바 스타일 */
+.category-bar {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: rgba(255, 255, 255, 0) !important;
+  padding: 1rem 2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  z-index: 9998 !important;
+  backdrop-filter: blur(5px) !important;
+  min-height: 70px !important;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.7) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.category-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  z-index: 9998 !important;
+  background-color: rgba(255, 250, 250, 0.8) !important;
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 6px !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  min-width: 150px !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.category-item:hover {
+  color: #c1c5ca;
+  background-color: rgba(255, 255, 255);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 학생회 소개 버튼 클릭 가능 스타일 */
+.category-item .category-text[onClick] {
+  cursor: pointer;
+}
+
+/* hover 시 메뉴 열기 */
+.category-item:hover .dropdown-menu {
+  display: block !important;
+}
+
+/* 드롭다운 메뉴에 hover 시에도 메뉴 유지 */
+.dropdown-menu:hover {
+  display: block !important;
+}
+
+/* 드롭다운 컨테이너에 hover 시 메뉴 유지 */
+.dropdown-container:hover .dropdown-menu {
+  display: block !important;
+}
+
+.category-icon {
+  font-size: 1.6rem !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9)) !important;
+  margin-right: 0.5rem !important;
+  pointer-events: auto !important;
+}
+
+.category-text {
+  font-size: 1.3rem !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  white-space: nowrap !important;
+  pointer-events: auto !important;
+}
+
+.chevron-icon {
+  font-size: 1.1rem !important;
+  margin-left: 0.8rem !important;
+  transition: transform 0.3s ease !important;
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9)) !important;
+  pointer-events: auto !important;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* 드롭다운 영역 설정 */
+.dropdown-container {
+  position: relative;
+  display: none;
+  padding-bottom: 10px !important;
+}
+
+/* 드롭다운에 마우스를 올렸을 때 보여질 서브메뉴 */
+.dropdown-menu {
+  position: absolute !important;
+  bottom: 100% !important;
+  left: 0 !important;
+  background-color: #004ca5 !important;
+  min-width: 160px !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+  z-index: 1000 !important;
+  border-radius: 4px !important;
+  padding: 0.5rem 0 !important;
+  margin-bottom: 0 !important;
+  display: none !important;
+}
+
+
+
+.dropdown-item {
+  color: white !important;
+  padding: 0.8rem 1.2rem !important;
+  display: block !important;
+  text-decoration: none !important;
+  font-size: 1.3rem !important;
+  transition: background-color 0.2s ease !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.dropdown-item:hover {
+  background-color: white !important;
+  color: #003c80 !important;
+}
+
+/* 소개글 리스트 스타일 */
+.intro-list {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.intro-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .imageSlider .imageSliderButton-left,
@@ -28,10 +184,13 @@ html, body, #root {
 .main-wrapper {
     width: 100%;
     min-height: 60vh;
-    padding: 0 4rem; /* main-container와 padding 동일하게 설정 */
-}
+    position: relative;
+    z-index: 1;
+  }
 .greeting-title {
   height: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -41,27 +200,29 @@ html, body, #root {
   display: flex;
   flex-direction: row;
   height: auto;
-  padding: 2rem;
+  /* padding: 2rem 4rem; */
   background-color: white;
   border-top: 4px solid #003f87;
   gap: 10rem;
-  margin: 0 auto;
   justify-content: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
   align-items: center;       /* 수직 중앙 정렬 (선택) */
 }
 
 .left-container {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .image-container {
-  width: 70%;
-  position: relative;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
   padding-bottom: 1.5rem;
-
 }
 
 .image-container img {
@@ -69,22 +230,20 @@ html, body, #root {
   height: auto;
   object-fit: contain;
   border-radius: 6px;
-  z-index: 0;
+  margin-bottom: 1rem;
 }
   
-  /* 타이틀 박스를 좌측 상단에 고정 */
-  .title-box {
-    position: absolute;
-    bottom: 3rem;
-    left: 0.3rem;
-    background-color: #1c62b3;
-    color: white;
-    padding: 0.4rem 1rem;
-    font-weight: bold;
-    font-size: 1.5rem;
-    z-index: 2;
-    text-align: left;
-  }
+/* 타이틀 박스를 사진 아래에 배치 */
+.title-box {
+  background-color: #1c62b3;
+  color: white;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+}
   
 /* 이름은 그대로 유지 */
 .name {
@@ -92,10 +251,10 @@ html, body, #root {
     color: black;
     font-weight: bold;
     font-size: 1.5rem;
-    margin-top: 0.4rem;
+    margin-top: 0.1rem;
     padding-left: 0.5rem;
     border-bottom: 3px solid #4a9cf9;
-    padding-bottom: 1rem;
+    padding-bottom: 0.2rem;
     width: 100%;
     text-align: right;
   }
@@ -116,24 +275,13 @@ html, body, #root {
   padding-top: 1rem;
 }
   
-.text-container p {
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-  
-.text-container .quote {
-  color: #005fcc;
+.right-container .quote {
+  color: #003f87;
   font-weight: bold;
   margin-top: 1rem;
 }
   
-.text-container .sign {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
+
 @media (max-width: 768px) {
 
 
@@ -144,6 +292,7 @@ html, body, #root {
     width: 100%;
     height: auto;
     min-height: 60vh; /* 모바일에서는 고정된 100vh 제거 */
+    margin-top: 10vh; /* 헤더바 높이만큼 상단 여백 추가 */
   }
 
   .imageSlider-container {
@@ -151,6 +300,50 @@ html, body, #root {
     height: 35vh !important; /* ✅ 덮어쓰기 강제 */
     overflow: hidden;
     position: relative;
+  }
+
+  /* 모바일 분류바 스타일 */
+  .category-bar {
+    padding: 1rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .category-item {
+    font-size: 1rem;
+    gap: 0.8rem;
+  }
+
+  .category-icon {
+    font-size: 1rem;
+  }
+
+  .category-text {
+    font-size: 1rem;
+  }
+
+  .chevron-icon {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  /* 모바일 드롭다운 메뉴 */
+  .dropdown-menu {
+    min-width: 120px !important;
+    padding: 0.3rem 0 !important;
+    position: absolute !important;
+    bottom: 100% !important;
+    left: 0 !important;
+    margin-bottom: 0 !important;
+    background-color: #004ca5 !important;
+    border-radius: 4px !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .dropdown-item {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+    color: white !important;
+    background-color: transparent !important;
   }
 
   .imageSlider {
@@ -193,6 +386,12 @@ html, body, #root {
     width: 100%;
   }
 
+  .left-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .image-container {
     width: 100%;
     max-width: 200px;
@@ -204,11 +403,14 @@ html, body, #root {
     width: 80%;
     height: auto;
     object-fit: contain;
+    margin-bottom: 1rem;
   }
 
   .title-box {
     font-size: 1.2rem;
-    bottom: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: fit-content;
   }
 
   .name {
@@ -233,5 +435,13 @@ html, body, #root {
   .text-container .quote {
     font-size: 1rem;
     text-align: center;
+  }
+
+  .intro-list {
+    padding-left: 1.5rem;
+  }
+
+  .intro-list li {
+    font-size: 0.9rem;
   }
 }

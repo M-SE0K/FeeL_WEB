@@ -18,8 +18,10 @@ html, body, #root {
   
   /* 이미지 슬라이더 영역 */
   .slider-container {
+    width: 100%;
     flex: 1;
     min-height: 50%;
+    overflow: hidden;
   }
   
   /* 카드 섹션 */
@@ -91,4 +93,3 @@ html, body, #root {
     max-width: 100%;
     object-fit: contain;
   }
-  
