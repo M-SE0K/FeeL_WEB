@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './home.css';
 
 import image1 from '../../img/imageSlider1.png';
@@ -20,10 +20,38 @@ const Home = () => {
   const slides = [{image: image1}, {image: image2}, {image: image3}];
   const { isMobile, isTablet, isDesktop } = useResponsive();
   useLayoutResize();
+
+  const firstRef = useRef(null);
+  const secondRef = useRef(null);
+  const thirdRef = useRef(null);
+
+  useEffect(() => {
+    const sections = [firstRef.current, secondRef.current, thirdRef.current];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach((el) => {
+      if (!el) return;
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   
   return (
     <div className="app-container">
-      <div className='first-screen'>
+      <div ref={firstRef} className='first-screen'>
         {/* 여기까지가 pc로 한 화면으로 나오게 부탁드립니다.. */}
         <div id="slider-container" className='slider-container'>
           <ImageSlider slides={slides} />
@@ -33,7 +61,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='second-screen'>
+      <div ref={secondRef} className='second-screen'>
         {/* 툴바 + 제휴업체 검색이 딱 한 화면에 나오도록 부탁드립니다. */}
         <div className='map-container'>
           지도 api 대기중
@@ -46,7 +74,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='third-screen'>
+      <div ref={thirdRef} className='third-screen'>
         {/* 툴바 + 행사 달력이 딱 한 화면에 나오도록 부탁드립니다. */}
         <div className='calender-container'>
           <CustomCalendar />
