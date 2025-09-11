@@ -1,0 +1,153 @@
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 12vh 1.25rem 2rem; /* 상단 고정 헤더(10vh) 고려하여 여유 패딩 */
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .benefits-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .benefits-list {
+    grid-template-columns: 1fr;
+    padding-top: 11vh;
+  }
+}
+
+.benefits-frame {
+  position: relative;
+  padding: 14px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e5e7eb, #ffffff);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.benefits-frame::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 12px;
+  border: 2px solid rgba(0,0,0,0.06);
+  pointer-events: none;
+}
+
+.benefits-frame-inner {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: inset 0 0 0 1px #f1f5f9, 0 1px 1px rgba(0,0,0,0.02);
+}
+
+/* 카드 내부: 좌측 지도 / 우측 정보 */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  width: 100%;
+  height: 380px; /* 카드 높이 고정 */
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+.benefits-map {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.benefits-info {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: grid;           /* 그리드 컨텍스트로 정렬 */
+  grid-auto-rows: min-content;
+  align-content: start;
+  gap: 0.5rem;
+  overflow: hidden;        /* 영역 밖으로는 표시하지 않음(스크롤 제거) */
+  min-width: 0;
+}
+
+.benefits-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.benefits-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.benefits-row .label {
+  color: #475569;
+  font-weight: 700;
+}
+
+.benefits-row .value {
+  color: #0f172a;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.benefits-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0.25rem 0 0.15rem;
+}
+
+.benefits-subtitle {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+/* 세로(개행) 혜택 리스트: 스크롤 없이 영역 내에서 줄바꿈 */
+.benefits-perks {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;    /* 불릿 들여쓰기 유지 */
+  color: #111827;
+  overflow: hidden;        /* 스크롤 제거, 넘친 부분은 숨김 */
+  white-space: normal;     /* 개행 허용 */
+  word-break: break-word;  /* 단어 단위로 줄바꿈 */
+  display: block;
+  max-height: 7.5rem;      /* 프레임 고정 높이에 맞춘 표시 영역(필요시 조정) */
+}
+
+.benefits-perks li {
+  list-style: disc;
+}
+
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    height: auto;          /* 모바일에서는 내용에 맞게 자동 높이 */
+  }
+  .benefits-map {
+    height: 280px;
+  }
+  .benefits-perks {
+    max-height: none;      /* 모바일에서는 전체 내용 표시 */
+  }
+}

@@ -58,7 +58,7 @@ function HeaderBar({ isMobile }) {
                 <Link to="/benefits">제휴 혜택</Link>
                 {activeMenu === 'benefits' && (
                   <div className="dropdown-container">
-                    <li><Link to="/benefits/partners">제휴업체 리스트</Link></li>
+                    <li><Link to="/benefits">제휴업체 리스트</Link></li>
                   </div>
                 )}
               </li>
