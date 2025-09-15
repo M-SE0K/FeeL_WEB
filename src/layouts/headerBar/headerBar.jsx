@@ -18,8 +18,8 @@ function HeaderBar({ isMobile }) {
       <header className="header-bar">
         <div className='header-left'>
           <div className="logo">
-            <Link to="/"><img src={logoImg} className="logo-img" alt="로고" /></Link>
-            <Link to="/" className="logo-title">전북대학교 공과대학 학생회</Link>
+            <Link to="/FeeL_WEB"><img src={logoImg} className="logo-img" alt="로고" /></Link>
+            <Link to="/FeeL_WEB" className="logo-title">전북대학교 공과대학 학생회</Link>
           </div>
         </div>
 
