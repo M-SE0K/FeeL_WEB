@@ -3,7 +3,9 @@ import React, { useEffect } from 'react';
 function Kakao() {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOAPIKEY}&autoload=false`;
+    
+    // services 라이브러리(Geocoder/Places)가 반드시 필요
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOAPIKEY}&autoload=false&libraries=services`;
     script.async = true;
 
     script.onload = () => {

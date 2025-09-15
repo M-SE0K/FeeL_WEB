@@ -19,16 +19,15 @@ function App() {
   useLayoutResize();
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/FeeL_WEB' : '/'}>
       <div className="app-container">
-        <div className='header-container'>              
+        <div id="header-container" className='header-container'>              
           <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
         </div>
 
         <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/FeeL_WEB" element={<Home />} />
               <Route path="/notice" element={<Notice />} />
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/contact" element={<Contact />} />
