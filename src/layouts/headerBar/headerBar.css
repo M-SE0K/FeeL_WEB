@@ -5,16 +5,24 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: #003f87;
+    background-color: transparent; /* 기본: 투명 */
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     align-items: center;
     z-index: 9999;
 }
+
+/* 스크롤 시: 파란 배경 */
+.header-bar.header-scrolled {
+  background-color: #004ca5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
 .header-left {
   display: flex;
   align-items: center;
   padding-left: 15px;
+  flex: 1 1 auto; /* 가용 가로공간 전체 차지 */
 }
 .header-right {
   display: flex;
@@ -23,10 +31,29 @@
 }
 
 .logo{
-    padding-left: 25px;
+    padding-left: 1rem;
     display: flex;
     align-items: center; /* ✅ 로고와 텍스트 정렬 */
     gap: 20px;
+
+}
+
+/* 로고 이미지 크기 제어: CSS 변수로 통일 */
+.logo-img {
+  width: var(--logo-size, clamp(100px, 8vw, 100px));
+  height: auto;
+  display: block;
+}
+
+/* 필요 시 쉽게 키울 수 있는 클래스 */
+.logo-size-lg {
+  --logo-size: 300px;
+}
+
+@media (max-width: 767px) {
+  .logo-size-lg {
+    --logo-size: 80px;
+  }
 }
 
 .logo-title {
@@ -41,11 +68,6 @@
 .logo-title:hover {
     color: #aaccff;
     text-decoration: underline;
-}
-  
-.logo-img{
-    margin-left: 10px;
-    width: 70px;
 }
 
 .nav-menu {
@@ -72,7 +94,7 @@
 }
   
 .nav-list li a:hover {
-    color: #aaccff;
+    color: #004ca5;
     text-decoration: underline;
 }
 .menu-button {

@@ -1,25 +1,35 @@
 // HeaderBar.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
 import './headerBar.css';
-import logoImg from '../../img/logo192.png';
-
+import logoImg_blue from '../../img/embulum_blue.png';
+import logoImg_white from '../../img/embulum_white.png';
 function HeaderBar({ isMobile }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   const toggleMenu = (menuName) => {
     setActiveMenu(activeMenu === menuName ? null : menuName);
   };
 
+  useEffect(() => {
+    const container = document.querySelector('.app-container');
+    const getScrollTop = () => (container ? container.scrollTop : window.scrollY);
+    const update = () => setIsAtTop(getScrollTop() <= 2);
+    update(); // 최초 렌더 시 위치 확인
+    const target = container || window;
+    target.addEventListener('scroll', update, { passive: true });
+    return () => target.removeEventListener('scroll', update);
+  }, []);
+
   return (
     <>
-      <header className="header-bar">
+      <header className={`header-bar ${isAtTop ? '' : 'header-scrolled'}`}>
         <div className='header-left'>
-          <div className="logo">
-            <Link to="/FeeL_WEB"><img src={logoImg} className="logo-img" alt="로고" /></Link>
-            <Link to="/FeeL_WEB" className="logo-title">전북대학교 공과대학 학생회</Link>
+          <div className="logo-size-lg">
+            <Link to="/FeeL_WEB"><img src={isAtTop ? logoImg_blue : logoImg_white} className="logo-img" alt="로고" /></Link>
           </div>
         </div>
 
