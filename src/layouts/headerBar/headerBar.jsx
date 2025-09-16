@@ -33,7 +33,7 @@ function HeaderBar({ isMobile }) {
                 {activeMenu === 'about' && (
                   <div className="dropdown-container">
                     <li><Link to="/about/intro">공과대학 학생회 소개</Link></li>
-                    <li><Link to="/about/org">조직도</Link></li>
+                    <li><Link to="/about/organization">조직도</Link></li>
                   </div>
                 )}
               </li>
