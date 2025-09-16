@@ -1,10 +1,17 @@
 {
   "files": {
-    "main.css": "/FeeL_WEB/static/css/main.78dffd5d.css",
-    "main.js": "/FeeL_WEB/static/js/main.a5d270fe.js",
+    "main.css": "/FeeL_WEB/static/css/main.89c6a5eb.css",
+    "main.js": "/FeeL_WEB/static/js/main.2987a2f9.js",
     "static/js/453.addd199c.chunk.js": "/FeeL_WEB/static/js/453.addd199c.chunk.js",
     "static/media/ryu.png": "/FeeL_WEB/static/media/ryu.7ddcd1eac8987ca24a2f.png",
     "static/media/kim.png": "/FeeL_WEB/static/media/kim.e7d3f0cf352d0af32d75.png",
+    "static/media/hogwan_7_0.JPG": "/FeeL_WEB/static/media/hogwan_7_0.63ea2376caf9271a1876.JPG",
+    "static/media/hogwan_6_0.JPG": "/FeeL_WEB/static/media/hogwan_6_0.6c2f16ca837995f3e4a1.JPG",
+    "static/media/hogwan_8_0.JPG": "/FeeL_WEB/static/media/hogwan_8_0.2f93b8ca3df5bb812505.JPG",
+    "static/media/hogwan_5_0.JPG": "/FeeL_WEB/static/media/hogwan_5_0.ce33d0d0c83de9c864af.JPG",
+    "static/media/hogwan_1_0.JPG": "/FeeL_WEB/static/media/hogwan_1_0.04e79d2da8c7a0d5b64b.JPG",
+    "static/media/hogwan_1_1.JPG": "/FeeL_WEB/static/media/hogwan_1_1.999f169b72d2e8db6c72.JPG",
+    "static/media/hogwan_3_0.JPG": "/FeeL_WEB/static/media/hogwan_3_0.b8091ebc4889d3f64357.JPG",
     "static/media/logo192.png": "/FeeL_WEB/static/media/logo192.e17538192a0b14862223.png",
     "static/media/feel_logo.png": "/FeeL_WEB/static/media/feel_logo.0426a0c60388021b541d.png",
     "static/media/imageSlider4.jpg": "/FeeL_WEB/static/media/imageSlider4.a2bac50860f7ce36097a.jpg",
@@ -13,12 +20,12 @@
     "static/media/imageSlider2.png": "/FeeL_WEB/static/media/imageSlider2.8066515c68bf2f00ae54.png",
     "static/media/imageSlider1.png": "/FeeL_WEB/static/media/imageSlider1.1ff808b74e87ed05fa1f.png",
     "index.html": "/FeeL_WEB/index.html",
-    "main.78dffd5d.css.map": "/FeeL_WEB/static/css/main.78dffd5d.css.map",
-    "main.a5d270fe.js.map": "/FeeL_WEB/static/js/main.a5d270fe.js.map",
+    "main.89c6a5eb.css.map": "/FeeL_WEB/static/css/main.89c6a5eb.css.map",
+    "main.2987a2f9.js.map": "/FeeL_WEB/static/js/main.2987a2f9.js.map",
     "453.addd199c.chunk.js.map": "/FeeL_WEB/static/js/453.addd199c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78dffd5d.css",
-    "static/js/main.a5d270fe.js"
+    "static/css/main.89c6a5eb.css",
+    "static/js/main.2987a2f9.js"
   ]
 }
