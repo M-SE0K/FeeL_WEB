@@ -28,7 +28,7 @@ import CustomCalendar from './customCalendar/customCalendar.jsx';
 import { HiMenu } from 'react-icons/hi';
 
 const Home = () => {
-  const slides = [{image: hogwan1_1}, {image: hogwan5_0}, {image: hogwan6_0}, {image: hogwan7_0}, {image: hogwan8_0}];
+  const slides = [{image: hogwan1_0}, {image: hogwan1_1}, {image: hogwan3_0}, {image: hogwan5_0}, {image: hogwan6_0}, {image: hogwan7_0}, {image: hogwan8_0}];
   const { isMobile, isTablet, isDesktop } = useResponsive();
   useLayoutResize();
   const [searchText, setSearchText] = useState('');

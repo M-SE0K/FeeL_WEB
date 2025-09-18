@@ -34,7 +34,7 @@ html, body, #root {
   align-items: center !important;
   gap: 2rem !important;
   z-index: 9998 !important;
-  backdrop-filter: blur(0px) !important;
+  backdrop-filter: blur(5px) !important;
   min-height: 70px !important;
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.7) !important;
   visibility: visible !important;

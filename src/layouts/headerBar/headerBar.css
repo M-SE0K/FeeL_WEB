@@ -5,33 +5,16 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: transparent; /* 기본: 투명 */
-    
+    background-color: #003f87;
+    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     align-items: center;
     z-index: 9999;
 }
-
-/* 스크롤 시: 파란 배경 */
-.header-bar.header-scrolled {
-  background-color: #004ca5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-/* 기본: 투명 배경에서 파란 글씨(특정 경로 제외) */
-.header-bar.at-top-blue {
-  color: #004ca5;
-}
-
-.header-bar.at-top-white {
-  color: white;
-}
-
 .header-left {
   display: flex;
   align-items: center;
   padding-left: 15px;
-  flex: 1 1 auto; /* 가용 가로공간 전체 차지 */
 }
 .header-right {
   display: flex;
@@ -40,29 +23,10 @@
 }
 
 .logo{
-    padding-left: 1rem;
+    padding-left: 25px;
     display: flex;
     align-items: center; /* ✅ 로고와 텍스트 정렬 */
     gap: 20px;
-
-}
-
-/* 로고 이미지 크기 제어: CSS 변수로 통일 */
-.logo-img {
-  width: var(--logo-size, clamp(100px, 8vw, 100px));
-  height: auto;
-  display: block;
-}
-
-/* 필요 시 쉽게 키울 수 있는 클래스 */
-.logo-size-lg {
-  --logo-size: 300px;
-}
-
-@media (max-width: 767px) {
-  .logo-size-lg {
-    --logo-size: 80px;
-  }
 }
 
 .logo-title {
@@ -78,6 +42,11 @@
     color: #aaccff;
     text-decoration: underline;
 }
+  
+.logo-img{
+    margin-left: 10px;
+    width: 70px;
+}
 
 .nav-menu {
     display: flex;
@@ -91,8 +60,7 @@
     gap: 3.5rem;
     margin: 0;
     padding: 0;
-    margin-right: 2rem;
-    padding-right: 4rem;
+    padding-right: 2rem;
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -100,8 +68,13 @@
 .nav-list li a {
     color: white;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
-
+  
+.nav-list li a:hover {
+    color: #aaccff;
+    text-decoration: underline;
+}
 .menu-button {
   background: none;
   border: none;
@@ -123,15 +96,14 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgb(255, 253, 253); /* 약간 투명 */
+  background-color: #004ca5;
   min-width: 160px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  border-radius: 1rem;
-  padding: 0.5rem 0; 
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  
 }
-
-
 /* 마지막 메뉴(자료실)만 드롭다운을 좌측 정렬 */
 .nav-list .dropdown:last-child .dropdown-container {
   left: 250%;
@@ -148,6 +120,10 @@
   white-space: nowrap;
 }
 
+.dropdown-container a:hover {
+  background-color: white;
+  color: #003c80;
+}
 
 /* hover 시 메뉴 열기 (PC용) */
 .dropdown:hover .dropdown-container {
