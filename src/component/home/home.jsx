@@ -3,10 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import './home.css';
 
-import image1 from '../../img/imageSlider1.png';
-import image2 from '../../img/imageSlider2.png';
-import image3 from '../../img/imageSlider3.png';
-
 import hogwan1_0 from '../../img/hogwan_1_0.JPG';
 import hogwan1_1 from '../../img/hogwan_1_1.JPG';
 import hogwan3_0 from '../../img/hogwan_3_0.JPG';

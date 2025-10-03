@@ -44,8 +44,8 @@ html, body, #root {
   /* 이미지 슬라이더 영역 */
   .slider-container {
     width: 100%;
-    flex: 1;
-    min-height: 50%;
+    flex: 2;
+    min-height: 60%;
     overflow: hidden;
   }
   
