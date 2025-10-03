@@ -1,104 +1,307 @@
-
 /* 전체 배경 스타일 */
 .calendar-wrapper {
   display: flex;
   background-color: #5489b5;
-  padding: 2rem;
-  border: 1px solid white;
+  padding: 3rem 5%;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 4rem;
 }
 
 .calendar-left {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
 }
 
-.react-calendar {
+/* react-big-calendar 커스텀 스타일 */
+.custom-big-calendar {
   background-color: transparent;
-  border: none;
   color: white;
-  font-weight: bold;
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.react-calendar__navigation {
+/* 툴바 (헤더) */
+.custom-big-calendar .rbc-toolbar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid white;
 }
 
-.react-calendar__navigation button {
+.custom-big-calendar .rbc-toolbar-label {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+.custom-big-calendar .rbc-btn-group button {
   background: none;
   border: none;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.react-calendar__month-view__weekdays {
-  text-align: center;
+.custom-big-calendar .rbc-btn-group button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.custom-big-calendar .rbc-btn-group button.rbc-active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* 헤더 (요일) */
+.custom-big-calendar .rbc-header {
+  padding: 0.8rem 0;
   font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
   border-bottom: 2px solid white;
-  padding-bottom: 5px;
 }
 
-.react-calendar__month-view__weekdays__weekday {
-  text-align: center;
-}
-
-.react-calendar__tile {
-  height: 40px;
-  text-align: center;
+/* 월 뷰 */
+.custom-big-calendar .rbc-month-view {
   border: none;
-  margin: 2px;
-  font-weight: 400;
-  color: white;
-  background: none;
+  background-color: transparent;
 }
 
-.react-calendar__tile--now {
-  background: none;
+.custom-big-calendar .rbc-month-row {
+  border: none;
+  overflow: visible;
+  min-height: 80px;
+}
+
+/* 날짜 셀 */
+.custom-big-calendar .rbc-day-bg {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.custom-big-calendar .rbc-day-bg:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.custom-big-calendar .rbc-off-range-bg {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-big-calendar .rbc-today {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 날짜 숫자 */
+.custom-big-calendar .rbc-date-cell {
+  text-align: right;
+  padding: 0.5rem;
+}
+
+.custom-big-calendar .rbc-date-cell > a {
   color: white;
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.custom-big-calendar .rbc-off-range .rbc-date-cell > a {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.custom-big-calendar .rbc-today .rbc-date-cell > a {
   font-weight: bold;
 }
 
-.highlighted-tile {
+/* 이벤트가 있는 날짜 */
+.custom-big-calendar .rbc-day-bg.has-event {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+}
+
+/* 이벤트 스타일 */
+.custom-big-calendar .rbc-event {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  border: none;
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.custom-big-calendar .rbc-event:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.custom-big-calendar .rbc-event.rbc-selected {
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
+}
+
+.custom-big-calendar .rbc-event-label {
+  display: none;
+}
+
+.custom-big-calendar .rbc-event-content {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 더보기 링크 */
+.custom-big-calendar .rbc-show-more {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.85rem;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin: 2px;
+}
+
+.custom-big-calendar .rbc-show-more:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 선택된 슬롯 */
+.custom-big-calendar .rbc-selected-cell {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 일정 박스 */
 .calendar-right {
   flex: 1;
-  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .schedule-box {
-  background-color: #79a6db;
-  padding: 1rem;
-  border: 2px solid white;
+  background-color: transparent;
+  padding: 2rem;
+  border: 3px solid white;
   color: white;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .schedule-title {
   font-weight: bold;
-  font-size: 1.2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid white;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid white;
+  margin-bottom: 1rem;
+}
+
+.schedule-date {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .schedule-list {
   list-style: none;
   padding-left: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .schedule-list li {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.schedule-list li span {
-  margin-left: 1rem;
+.schedule-list li:last-child {
+  border-bottom: none;
+}
+
+.event-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-description,
+.event-time,
+.event-date-range {
   font-weight: normal;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+  opacity: 0.95;
+}
+
+.no-events {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .calendar-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 3%;
+  }
+
+  .calendar-left {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-wrapper {
+    padding: 1.5rem 2%;
+    gap: 1.5rem;
+  }
+
+  .calendar-left {
+    min-height: 400px;
+  }
+
+  .custom-big-calendar .rbc-toolbar-label {
+    font-size: 1.4rem;
+  }
+
+  .custom-big-calendar .rbc-header {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  .custom-big-calendar .rbc-date-cell > a {
+    font-size: 0.9rem;
+  }
+
+  .custom-big-calendar .rbc-event {
+    font-size: 0.75rem;
+  }
+
+  .schedule-title {
+    font-size: 1.5rem;
+  }
+
+  .schedule-date {
+    font-size: 1.1rem;
+  }
+
+  .event-title {
+    font-size: 1.1rem;
+  }
 }

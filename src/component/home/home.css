@@ -281,9 +281,12 @@ html, body, #root {
   .third-screen {
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     scroll-snap-align: start;
+  }
+
+  .calender-container {
+    width: 100%;
+    display: flex;
   }
   
   /* 배너 */
