@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './CustomCalendar.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // moment 한국어 설정
 moment.locale('ko');
@@ -11,6 +12,7 @@ const localizer = momentLocalizer(moment);
 
 function CustomCalendar({ eventsData = {} }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   // eventsData를 react-big-calendar 형식으로 변환
   const events = useMemo(() => {
@@ -99,6 +101,30 @@ function CustomCalendar({ eventsData = {} }) {
     showMore: (total) => `+${total} 더보기`
   };
 
+  // 월 이동 핸들러
+  const handlePreviousMonth = () => {
+    setCurrentDate(prevDate => moment(prevDate).subtract(1, 'month').toDate());
+  };
+
+  const handleNextMonth = () => {
+    setCurrentDate(prevDate => moment(prevDate).add(1, 'month').toDate());
+  };
+
+  // 커스텀 툴바 컴포넌트
+  const CustomToolbar = ({ label }) => {
+    return (
+      <div className="rbc-toolbar">
+        <button className="nav-button" onClick={handlePreviousMonth}>
+          <FaChevronLeft />
+        </button>
+        <span className="rbc-toolbar-label">{label}</span>
+        <button className="nav-button" onClick={handleNextMonth}>
+          <FaChevronRight />
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div className="calendar-wrapper">
       <div className="calendar-left">
@@ -110,6 +136,8 @@ function CustomCalendar({ eventsData = {} }) {
           style={{ height: '100%' }}
           views={['month']}
           defaultView="month"
+          date={currentDate}
+          onNavigate={(date) => setCurrentDate(date)}
           selectable
           onSelectSlot={handleSelectSlot}
           onSelectEvent={handleSelectEvent}
@@ -118,6 +146,9 @@ function CustomCalendar({ eventsData = {} }) {
           messages={messages}
           popup
           className="custom-big-calendar"
+          components={{
+            toolbar: CustomToolbar
+          }}
         />
       </div>
 

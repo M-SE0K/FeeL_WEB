@@ -7,6 +7,7 @@ import Contact from './component/contact/contact.jsx';
 import Notice from './component/notice/notice.jsx';
 import Resources from './component/resources/resources.jsx';
 import Intro from './component/about/intro/intro.jsx';
+import TopBar from './layouts/topBar/topBar.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
 import './App.css';
@@ -21,8 +22,9 @@ function App() {
   return (
     <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/FeeL_WEB' : '/'}>
       <div className="app-container">
-        <div id="header-container" className='header-container'>              
-          <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
+        <TopBar />
+        <div id="header-container" className='header-container'>
+          <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} />
         </div>
 
         <main className="main-content">
@@ -40,7 +42,7 @@ function App() {
             <Banner />
         </div>
       </div>
-      
+
     </BrowserRouter>
   );
 }

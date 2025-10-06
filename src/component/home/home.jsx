@@ -3,13 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import './home.css';
 
-import hogwan1_0 from '../../img/hogwan_1_0.JPG';
-import hogwan1_1 from '../../img/hogwan_1_1.JPG';
-import hogwan3_0 from '../../img/hogwan_3_0.JPG';
-import hogwan5_0 from '../../img/hogwan_5_0.JPG';
-import hogwan6_0 from '../../img/hogwan_6_0.JPG';
-import hogwan7_0 from '../../img/hogwan_7_0.JPG';
-import hogwan8_0 from '../../img/hogwan_8_0.JPG';
+import A1 from '../../img//A1.JPG';
+import A2 from '../../img//A2.JPG';
+import A3 from '../../img//A3.JPG';
+import A4 from '../../img//A4.JPG';
+import A5 from '../../img//A5.JPG';
 
 import ImageSlider from './imageSlider/imageSlider.jsx';
 
@@ -24,7 +22,7 @@ import CustomCalendar from './customCalendar/customCalendar.jsx';
 import { HiMenu } from 'react-icons/hi';
 
 const Home = () => {
-  const slides = [{image: hogwan1_0}, {image: hogwan1_1}, {image: hogwan3_0}, {image: hogwan5_0}, {image: hogwan6_0}, {image: hogwan7_0}, {image: hogwan8_0}];
+  const slides = [{image: A1}, {image: A2}, {image: A3}, {image: A4}, {image: A5}];
   const { isMobile, isTablet, isDesktop } = useResponsive();
   useLayoutResize();
   const [searchText, setSearchText] = useState('');
