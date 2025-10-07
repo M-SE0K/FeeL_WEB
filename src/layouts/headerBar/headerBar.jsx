@@ -1,46 +1,53 @@
 // HeaderBar.jsx
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
 import './headerBar.css';
-import logoImg from '../../img/logo192.png';
-
+import logoImg_blue from '../../img/embulum_blue.png';
+import logoImg_white from '../../img/embulum_white.png';
 function HeaderBar({ isMobile }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const location = useLocation();
 
   const toggleMenu = (menuName) => {
     setActiveMenu(activeMenu === menuName ? null : menuName);
   };
 
+  useEffect(() => {
+    const container = document.querySelector('.app-container');
+    const getScrollTop = () => (container ? container.scrollTop : window.scrollY);
+    const update = () => setIsAtTop(getScrollTop() <= 2);
+    update(); // 최초 렌더 시 위치 확인
+    const target = container || window;
+    target.addEventListener('scroll', update, { passive: true });
+    return () => target.removeEventListener('scroll', update);
+  }, []);
+
   return (
     <>
-      <header className="header-bar">
+      <header className={`header-bar ${isAtTop ? '' : 'header-scrolled'} ${(() => { const p = (location.pathname || '').toLowerCase(); const isExempt = (p === '/feel_web' || p === '/about/intro'); return isAtTop && !isExempt ? 'at-top-blue' : 'at-top-white'; })()}`}>
         <div className='header-left'>
-          <div className="logo">
-            <Link to="/FeeL_WEB"><img src={logoImg} className="logo-img" alt="로고" /></Link>
-            <Link to="/FeeL_WEB" className="logo-title">전북대학교 공과대학 학생회</Link>
+          <div className="logo-size-lg">
+            <Link to="/FeeL_WEB"><img src={isAtTop ? logoImg_blue : logoImg_white} className="logo-img" alt="로고" /></Link>
           </div>
         </div>
 
         {!isMobile && (
           <nav className="nav-menu">
             <ul className="nav-list">
-              <li className="dropdown"
-                onMouseEnter={() => toggleMenu('about')}
-                onMouseLeave={() => toggleMenu(null)}>
-                <ul> 학생회 소개</ul>
+              <li className="dropdown" onMouseEnter={() => toggleMenu('about')} onMouseLeave={() => toggleMenu(null)}>
+                <ul>학생회 소개</ul>
                 {activeMenu === 'about' && (
                   <div className="dropdown-container">
                     <li><Link to="/about/intro">공과대학 학생회 소개</Link></li>
-                    <li><Link to="/about/org">조직도</Link></li>
+                    <li><Link to="/about/organization">조직도</Link></li>
                   </div>
                 )}
               </li>
-              <li className="dropdown"
-                onMouseEnter={() => toggleMenu('notice')}
-                onMouseLeave={() => toggleMenu(null)}>
-                <Link to="/notice">알림</Link>
+              <li className="dropdown" onMouseEnter={() => toggleMenu('notice')} onMouseLeave={() => toggleMenu(null)}>
+                <ul>알림</ul>
                 {activeMenu === 'notice' && (
                   <div className="dropdown-container">
                     <li><Link to="/notice/announcement">공지사항</Link></li>
@@ -52,10 +59,8 @@ function HeaderBar({ isMobile }) {
                 )}
               </li>
 
-              <li className="dropdown"
-                onMouseEnter={() => toggleMenu('benefits')}
-                onMouseLeave={() => toggleMenu(null)}>
-                <Link to="/benefits">제휴 혜택</Link>
+              <li className="dropdown" onMouseEnter={() => toggleMenu('benefits')} onMouseLeave={() => toggleMenu(null)}>
+                <ul>제휴 혜택</ul>
                 {activeMenu === 'benefits' && (
                   <div className="dropdown-container">
                     <li><Link to="/benefits">제휴업체 리스트</Link></li>
@@ -63,10 +68,8 @@ function HeaderBar({ isMobile }) {
                 )}
               </li>
 
-              <li className="dropdown"
-                onMouseEnter={() => toggleMenu('contact')}
-                onMouseLeave={() => toggleMenu(null)}>
-                <Link to="/contact">문의</Link>
+              <li className="dropdown" onMouseEnter={() => toggleMenu('contact')} onMouseLeave={() => toggleMenu(null)}>
+                <ul>문의</ul>
                 {activeMenu === 'contact' && (
                   <div className="dropdown-container">
                     <li><Link to="/contact/faq">FAQ</Link></li>
@@ -77,10 +80,8 @@ function HeaderBar({ isMobile }) {
                 )}
               </li>
 
-              <li className="dropdown"
-                onMouseEnter={() => toggleMenu('resources')}
-                onMouseLeave={() => toggleMenu(null)}>
-                <Link to="/resources">자료실</Link>
+              <li className="dropdown" onMouseEnter={() => toggleMenu('resources')} onMouseLeave={() => toggleMenu(null)}>
+                <ul>자료실</ul>
                 {activeMenu === 'resources' && (
                   <div className="dropdown-container">
                     <li><Link to="/resources/map">공과대학 내부 지도</Link></li>

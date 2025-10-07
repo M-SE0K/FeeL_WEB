@@ -7,7 +7,7 @@ import Contact from './component/contact/contact.jsx';
 import Notice from './component/notice/notice.jsx';
 import Resources from './component/resources/resources.jsx';
 import Intro from './component/about/intro/intro.jsx';
-import TopBar from './layouts/topBar/topBar.jsx';
+import Organization from './component/about/organization/organization.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
 import './App.css';
@@ -35,6 +35,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/about/intro" element={<Intro />} />
+              <Route path="/about/organization" element={<Organization />} />
+              <Route path="/about/organization" element={<Intro />} />
             </Routes>
           </main>
 

@@ -1,0 +1,59 @@
+/* 페이지 */
+.org-page { padding: 2rem; margin-top: 10vh; color: #0b1526; }
+
+/* 상단(회장/부회장/집행위원장) */
+.org-top { position: relative; display: grid; gap: 1.25rem; justify-items: center; }
+
+.org-leaders { position: relative; display: grid; gap: 1rem; width: 100%; max-width: 920px; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.org-leader-card { background:#fff; border:2px solid #2955a6; border-radius: 12px; text-align:center; padding:0.75rem 1rem; }
+.org-leader-role { color:#2955a6; font-weight:800; }
+.org-leader-name { font-weight:900; font-size:1.75rem; }
+
+/* rail 제거에 따라 관련 스타일 삭제 */
+
+.org-chair { text-align:center; background:#fff; border:2px solid #2955a6; border-radius:1rem; padding:0.75rem 10rem; }
+.org-chair-title { color:#2955a6; font-weight:800; }
+.org-chair-name { font-weight:900; font-size:1.25rem; }
+
+/* 부서 그리드 */
+.org-depts {
+    position:relative; 
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.org-grid { 
+    margin: 2rem auto 0; /* 화면 중앙 정렬 */
+    display:grid; 
+    gap:1rem; 
+    grid-template-columns: repeat(2, minmax(0,1fr)); 
+    width: 100%;
+    max-width: 1200px;
+}
+@media (min-width:1024px){ .org-grid{ grid-template-columns: repeat(8, minmax(0,1fr)); } }
+
+.org-dept { position:relative; background:#fff; border:2px solid #e5e7eb; border-radius:12px; padding:1rem; display:flex; flex-direction:column; gap:0.5rem; }
+
+.org-dept-title { margin:0; text-align:center; color:#2955a6; font-weight:900; }
+.org-dept-roles { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
+.org-role { text-align:center; }
+.org-role-title { color:#334155; font-weight:800; }
+.org-role-name { font-weight:800; font-size:1.1rem; }
+.org-divider { height:2px; background:#e5e7eb; border-radius:2px; }
+.org-members-title { text-align:center; color:#2955a6; font-weight:800; margin-bottom:0.5rem;}
+.org-member-list { 
+    font-weight: bold;
+  margin: 0; 
+  padding: 0; 
+  list-style: none; /* 글머리 제거 */
+  display: flex; 
+  flex-direction: column; /* 세로 정렬 */
+  gap: 0.4rem; 
+  align-items: center; /* 가운데 정렬이 필요 없으면 제거 */
+}
+
+
