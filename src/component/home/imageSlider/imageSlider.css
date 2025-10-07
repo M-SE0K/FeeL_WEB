@@ -1,59 +1,118 @@
 .imageSlider {
-  position: relative;      /* 자식 요소(버튼 등)의 절대 위치 기준을 설정 */
-  z-index: auto;             /* 다른 요소보다 뒤에 배치되도록 설정 */
-  width: 100%;             /* 부모 컨테이너의 전체 너비 사용 */
-  height: 100%;            /* 부모 높이를 그대로 사용 (vh 등으로 비율 고정) */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.slide {
-  display: flex;           /* 슬라이드 이미지를 가로로 배치하기 위해 flex 사용 */
-  transition: transform 0.8s ease; /* 슬라이드 전환 애니메이션 (0.8초) */
+.imageSwiper {
+  width: 100%;
+  height: 100%;
 }
 
-.slide.image {
-  overflow: hidden;        /* 슬라이드 영역을 벗어나는 이미지 부분을 잘라냄 */
+.slide-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.slide.active {
-  transform: translateX(0); /* 활성화된 슬라이드는 원래 위치(0)로 이동 */
+/* 커스텀 네비게이션 버튼 */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.slide:not(.active) {
-  transform: translateX(100%); /* 활성화되지 않은 슬라이드는 오른쪽으로 밀려남 */
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
 }
 
-.image {
-  display: block;          /* 인라인 요소의 여백 제거 및 블록화 */
-  z-index: 1;              /* 슬라이드 내부에서 이미지가 위쪽에 표시되도록 설정 */
-  width: 100%;             /* 이미지가 슬라이드 영역 전체 너비를 차지 */
-  height: 100%;            /* 이미지가 슬라이드 영역 전체 높이를 차지 */
+.swiper-button-prev-custom {
+  left: 30px;
 }
 
-/* 화살표 버튼 공통 스타일 */
-.imageSliderButton-left,
-.imageSliderButton-right {
-  position: absolute;      /* 슬라이드 컨테이너 내에서 절대 위치 지정 */
-  top: 50%;                /* 컨테이너의 세로 중앙에 위치 */
-  transform: translateY(-50%); /* 중앙 정렬 보정 */
-  z-index: 10;             /* 이미지 위에 버튼이 오도록 설정 */
-  background-color: rgba(0, 0, 0, 0.3); /* 반투명 검정 배경 */
-  padding: 10px;           /* 버튼 내부 여백 */
-  border-radius: 50%;      /* 동그란 버튼 모양 */
-  color: white;            /* 화살표 색상 흰색 */
-  cursor: pointer;         /* 마우스를 올리면 포인터로 변경 */
-  transition: background-color 0.3s ease; /* hover 시 배경색 전환 애니메이션 */
+.swiper-button-next-custom {
+  right: 30px;
 }
 
-.imageSliderButton-left:hover,
-.imageSliderButton-right:hover {
-  background-color: rgba(0, 0, 0, 0.6); /* 마우스 오버 시 더 진한 배경 */
+.swiper-button-prev-custom svg,
+.swiper-button-next-custom svg {
+  width: 24px;
+  height: 24px;
 }
 
-.imageSliderButton-left {
-  left: 20px;              /* 왼쪽 버튼은 컨테이너 왼쪽에서 20px 떨어짐 */
+/* Pagination (인디케이터) 스타일 */
+.imageSwiper .swiper-pagination {
+  bottom: 20px;
 }
 
-.imageSliderButton-right {
-  right: 20px;             /* 오른쪽 버튼은 컨테이너 오른쪽에서 20px 떨어짐 */
+.imageSwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.imageSwiper .swiper-pagination-bullet-active {
+  background: white;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Fade 효과를 위한 스타일 */
+.imageSwiper .swiper-slide {
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.imageSwiper .swiper-slide-active {
+  opacity: 1;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-button-prev-custom {
+    left: 15px;
+  }
+
+  .swiper-button-next-custom {
+    right: 15px;
+  }
+
+  .swiper-button-prev-custom svg,
+  .swiper-button-next-custom svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .imageSwiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .imageSwiper .swiper-pagination-bullet-active {
+    width: 24px;
+  }
 }

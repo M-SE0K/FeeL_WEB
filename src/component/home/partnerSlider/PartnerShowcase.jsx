@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Kakao from '../maps/kakao.jsx';
 import { partners } from '../../benefits/partnersData.js';
+import './PartnerShowcase.css';
 
 // 단순 셔플(Fisher–Yates)
 function shuffleArray(input) {

@@ -22,8 +22,9 @@ function App() {
   return (
     <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/FeeL_WEB' : '/'}>
       <div className="app-container">
-        <div id="header-container" className='header-container'>              
-          <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} /> 
+        <TopBar />
+        <div id="header-container" className='header-container'>
+          <HeaderBar isMobile={isMobile} isTablet={isTablet} isDesktop={isDesktop} />
         </div>
 
         <main className="main-content">
@@ -43,7 +44,7 @@ function App() {
             <Banner />
         </div>
       </div>
-      
+
     </BrowserRouter>
   );
 }
