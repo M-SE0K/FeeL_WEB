@@ -1,0 +1,209 @@
+/* 페이지 전체 */
+.building-map-page {
+  padding: 2rem;
+  margin-top: 10vh;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.map-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #007bff;
+  border-radius: 2px;
+}
+
+/* 건물 그리드 */
+.building-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.building-btn {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.building-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border-color: #007bff;
+}
+
+.building-btn.active {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* 층 선택 섹션 */
+.floor-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.floor-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.floor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.floor-btn {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  background: white;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.floor-btn:hover {
+  border-color: #17a2b8;
+  background: #e0f7fa;
+  transform: scale(1.05);
+}
+
+.floor-btn.active {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  color: white;
+  border-color: #138496;
+  box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* 지도 표시 */
+.map-display {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.map-display-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 1rem;
+}
+
+.map-image-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.map-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-placeholder {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  color: #64748b;
+  text-align: center;
+  padding: 2rem;
+}
+
+.map-placeholder p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.map-placeholder small {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .building-map-page {
+    padding: 1rem;
+  }
+
+  .map-title {
+    font-size: 1.8rem;
+  }
+
+  .building-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .building-btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .floor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .floor-section {
+    padding: 1rem;
+  }
+
+  .map-display {
+    padding: 1rem;
+  }
+
+  .map-display-title {
+    font-size: 1.3rem;
+  }
+}
+
