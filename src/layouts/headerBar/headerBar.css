@@ -1,26 +1,18 @@
 .header-bar {
     position: fixed;
-    top: 40px;             /* topBar 높이만큼 아래로 */
-    height: 10vh;          /* 고정 높이 */
+    top: 40px;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: transparent; /* 기본: 투명 */
-    
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-items: center;
+    color: white;
     z-index: 9999;
-}
-
-/* 스크롤 시: 파란 배경 */
-.header-bar.header-scrolled {
-  background-color: #004ca5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    /* Framer Motion이 배경/그림자 제어하므로 CSS 기본값 제거 */
 }
 
 /* 기본: 투명 배경에서 파란 글씨(특정 경로 제외) */
-.header-bar.at-top-blue {
+.header-bar.at-top-blue .nav-list li a {
   color: #004ca5;
 }
 

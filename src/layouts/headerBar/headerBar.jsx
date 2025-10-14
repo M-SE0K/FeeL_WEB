@@ -1,6 +1,7 @@
 // HeaderBar.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import './headerBar.css';
 import logoImg_blue from '../../img/embulum_blue.png';
@@ -25,12 +26,35 @@ function HeaderBar({ isMobile }) {
     return () => target.removeEventListener('scroll', update);
   }, []);
 
+  const p = (location.pathname || '').toLowerCase();
+  const isExempt = (p === '/' || p === '/about/intro' || p === '/feel_web');
+  const shouldBeBlueText = isAtTop && !isExempt;
+
   return (
     <>
-      <header className={`header-bar ${isAtTop ? '' : 'header-scrolled'} ${(() => { const p = (location.pathname || '').toLowerCase(); const isExempt = (p === '/feel_web' || p === '/about/intro'); return isAtTop && !isExempt ? 'at-top-blue' : 'at-top-white'; })()}`}>
+      <motion.header 
+        className={`header-bar ${shouldBeBlueText ? 'at-top-blue' : ''}`}
+        animate={{
+          backgroundColor: isAtTop ? 'rgba(0,0,0,0)' : 'rgba(0,76,165,1)',
+          boxShadow: isAtTop ? '0 0 0 rgba(0,0,0,0)' : '0 2px 6px rgba(0,0,0,0.15)'
+        }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+      >
         <div className='header-left'>
           <div className="logo-size-lg">
-            <Link to="/FeeL_WEB"><img src={isAtTop ? logoImg_blue : logoImg_white} className="logo-img" alt="로고" /></Link>
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={isAtTop ? 'blue' : 'white'}
+                src={isAtTop ? logoImg_blue : logoImg_white}
+                className="logo-img"
+                alt="로고"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ display: 'block' }}
+              />
+            </AnimatePresence>
           </div>
         </div>
 
@@ -168,7 +192,7 @@ function HeaderBar({ isMobile }) {
 
           </div>
         )}
-      </header>
+      </motion.header>
     </>
   );
 }

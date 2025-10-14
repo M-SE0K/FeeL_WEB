@@ -11,6 +11,7 @@ import Organization from './component/about/organization/organization.jsx';
 import AnnouncementList from './component/notice/announcement/AnnouncementList.jsx';
 import AnnouncementDetail from './component/notice/announcement/AnnouncementDetail.jsx';
 import Gallery from './component/gallery/Gallery.jsx';
+import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
 import TopBar from './layouts/topBar/topBar.jsx';
@@ -41,6 +42,7 @@ function App() {
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/map" element={<BuildingMap />} />
               <Route path="/about/intro" element={<Intro />} />
               <Route path="/about/organization" element={<Organization />} />
             </Routes>
