@@ -5,7 +5,7 @@
   grid-template-rows: 1fr; /* 한 줄 고정 */
   gap: 1.5rem;
   flex: 0 0 auto;
-  height: 58vh;
+  height: 61vh;
   max-height: 540px;
   min-height: 360px;
   width: 100%;

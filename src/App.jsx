@@ -8,6 +8,9 @@ import Notice from './component/notice/notice.jsx';
 import Resources from './component/resources/resources.jsx';
 import Intro from './component/about/intro/intro.jsx';
 import Organization from './component/about/organization/organization.jsx';
+import AnnouncementList from './component/notice/announcement/AnnouncementList.jsx';
+import AnnouncementDetail from './component/notice/announcement/AnnouncementDetail.jsx';
+import Gallery from './component/gallery/Gallery.jsx';
 import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
@@ -33,6 +36,9 @@ function App() {
             <Routes>
               <Route path="/FeeL_WEB" element={<Home />} />
               <Route path="/notice" element={<Notice />} />
+              <Route path="/notice/announcement" element={<AnnouncementList />} />
+              <Route path="/notice/announcement/:id" element={<AnnouncementDetail />} />
+              <Route path="/notice/gallery" element={<Gallery />} />
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />

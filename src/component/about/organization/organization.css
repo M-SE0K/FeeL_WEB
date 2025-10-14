@@ -42,7 +42,7 @@
 .org-dept-roles { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; }
 .org-role { text-align:center; }
 .org-role-title { color:#334155; font-weight:800; }
-.org-role-name { font-weight:800; font-size:1.1rem; }
+.org-role-name { font-weight:800; font-size:1rem; }
 .org-divider { height:2px; background:#e5e7eb; border-radius:2px; }
 .org-members-title { text-align:center; color:#2955a6; font-weight:800; margin-bottom:0.5rem;}
 .org-member-list { 
