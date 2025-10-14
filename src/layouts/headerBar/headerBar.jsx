@@ -33,7 +33,7 @@ function HeaderBar({ isMobile }) {
   return (
     <>
       <motion.header 
-        className={`header-bar ${shouldBeBlueText ? 'at-top-blue' : ''}`}
+        className={`header-bar ${shouldBeBlueText ? 'at-top-blue' : ''} ${!isAtTop ? 'header-scrolled' : ''}`}
         animate={{
           backgroundColor: isAtTop ? 'rgba(0,0,0,0)' : 'rgba(0,76,165,1)',
           boxShadow: isAtTop ? '0 0 0 rgba(0,0,0,0)' : '0 2px 6px rgba(0,0,0,0.15)'

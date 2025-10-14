@@ -12,12 +12,19 @@
 }
 
 /* 기본: 투명 배경에서 파란 글씨(특정 경로 제외) */
-.header-bar.at-top-blue .nav-list li a {
-  color: #004ca5;
+.header-bar.at-top-blue .nav-list li a,
+.header-bar.at-top-blue .nav-list > li > ul,
+.header-bar.at-top-blue .nav-list > li > span,
+.header-bar.at-top-blue .nav-label {
+  color: #004ca5 !important;
 }
 
-.header-bar.at-top-white {
-  color: white;
+/* 스크롤 시: 흰 글씨 */
+.header-bar.header-scrolled .nav-list li a,
+.header-bar.header-scrolled .nav-list > li > ul,
+.header-bar.header-scrolled .nav-list > li > span,
+.header-bar.header-scrolled .nav-label {
+  color: white !important;
 }
 
 .header-left {
