@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiClock, FiUser, FiEye, FiArrowLeft } from 'react-icons/fi';
 import { BsPinAngleFill } from 'react-icons/bs';
+import { formatDate } from './utils';
 import './announcement.css';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
@@ -31,17 +32,6 @@ export default function AnnouncementDetail() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString('ko-KR', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
   };
 
   if (loading) {
@@ -154,11 +144,11 @@ export default function AnnouncementDetail() {
             <FiUser /> {notice.author}
           </span>
           <span className="detail-date">
-            <FiClock /> {formatDate(notice.createdAt)}
+            <FiClock /> {formatDate(notice.createdAt, true)}
           </span>
           {notice.updatedAt !== notice.createdAt && (
             <span className="detail-updated">
-              <FiClock /> (수정: {formatDate(notice.updatedAt)})
+              <FiClock /> (수정: {formatDate(notice.updatedAt, true)})
             </span>
           )}
           <span className="detail-views">
@@ -180,6 +170,24 @@ export default function AnnouncementDetail() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
       >
+        {notice.imageUrl && (
+          <motion.div
+            className="detail-image-container"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.9 }}
+          >
+            <img
+              src={`${API_URL}${notice.imageUrl}`}
+              alt={notice.title}
+              className="detail-image"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                console.error('이미지 로드 실패:', notice.imageUrl);
+              }}
+            />
+          </motion.div>
+        )}
         {notice.content.split('\n').map((line, index) => (
           <motion.p
             key={index}
