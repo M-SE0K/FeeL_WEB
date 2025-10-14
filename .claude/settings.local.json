@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Read(//c/Users/scheoleon/workspace/**)",
+      "Bash(java:*)",
+      "Bash(mvn:*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)",
+      "Bash(curl:*)",
+      "Bash(chmod:*)",
+      "Bash(./mvnw:*)",
+      "Bash(./mvnw.cmd clean:*)",
+      "Bash(./mvnw.cmd spring-boot:run:*)",
+      "Bash(netstat:*)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []
