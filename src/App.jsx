@@ -10,7 +10,7 @@ import Intro from './component/about/intro/intro.jsx';
 import Organization from './component/about/organization/organization.jsx';
 import AnnouncementList from './component/notice/announcement/AnnouncementList.jsx';
 import AnnouncementDetail from './component/notice/announcement/AnnouncementDetail.jsx';
-import Gallery from './component/gallery/Gallery.jsx';
+import Gallery from './component/notice/gallery/Gallery.jsx';
 import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';

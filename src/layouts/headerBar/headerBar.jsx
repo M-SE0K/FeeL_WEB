@@ -42,19 +42,21 @@ function HeaderBar({ isMobile }) {
       >
         <div className='header-left'>
           <div className="logo-size-lg">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={isAtTop ? 'blue' : 'white'}
-                src={isAtTop ? logoImg_blue : logoImg_white}
-                className="logo-img"
-                alt="로고"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                style={{ display: 'block' }}
-              />
-            </AnimatePresence>
+            <Link to="/FeeL_WEB">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={isAtTop ? 'blue' : 'white'}
+                  src={isAtTop ? logoImg_blue : logoImg_white}
+                  className="logo-img"
+                  alt="로고"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ display: 'block', cursor: 'pointer' }}
+                />
+              </AnimatePresence>
+            </Link>
           </div>
         </div>
 
