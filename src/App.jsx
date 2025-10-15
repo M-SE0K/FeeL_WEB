@@ -34,7 +34,7 @@ function App() {
 
         <main className="main-content">
             <Routes>
-              <Route path="/FeeL_WEB" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/notice" element={<Notice />} />
               <Route path="/notice/announcement" element={<AnnouncementList />} />
               <Route path="/notice/announcement/:id" element={<AnnouncementDetail />} />
