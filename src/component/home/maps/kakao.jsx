@@ -50,7 +50,7 @@ function Kakao({ containerStyle, address, name, lat, lng }) {
     return () => {
       document.head.removeChild(script);
     };
-  }, []);
+  }, [address, lat, lng]);
 
   return (
     <div>

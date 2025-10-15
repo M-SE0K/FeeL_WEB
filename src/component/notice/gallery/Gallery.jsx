@@ -25,7 +25,7 @@ export default function Gallery() {
 
   useEffect(() => {
     fetchGalleries();
-  }, [currentPage, selectedCategory]);
+  }, [currentPage, selectedCategory, fetchGalleries]);
 
   const fetchGalleries = async () => {
     setLoading(true);

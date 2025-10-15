@@ -17,7 +17,7 @@ export default function AnnouncementDetail() {
 
   useEffect(() => {
     fetchNoticeDetail();
-  }, [id]);
+  }, [id, fetchNoticeDetail]);
 
   const fetchNoticeDetail = async () => {
     setLoading(true);

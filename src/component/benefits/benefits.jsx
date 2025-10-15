@@ -216,7 +216,7 @@ const BenefitsPartner = ({ name, address, phone, benefits = [], lat, lng }) => {
     return () => {
       mapObjRef.current = null;
     };
-  }, [lat, lng]);
+  }, [lat, lng, address, name]);
 
   return (
     <div className="benefits-frame">

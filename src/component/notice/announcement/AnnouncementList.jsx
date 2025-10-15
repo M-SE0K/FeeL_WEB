@@ -20,7 +20,7 @@ export default function AnnouncementList() {
   useEffect(() => {
     fetchNotices();
     fetchPinnedNotices();
-  }, [currentPage, selectedCategory]);
+  }, [currentPage, selectedCategory, fetchNotices, fetchPinnedNotices]);
 
   const fetchNotices = async () => {
     setLoading(true);

@@ -77,7 +77,7 @@ function parseTSV(tsv) {
         address,
         phone,
         benefits: (benefitsRaw || '')
-          .split(/\s*[/•\-]\s*|\s{2,}/)
+          .split(/\s*[/•-]\s*|\s{2,}/)
           .map(s => s.trim())
           .filter(Boolean),
         lat: null,

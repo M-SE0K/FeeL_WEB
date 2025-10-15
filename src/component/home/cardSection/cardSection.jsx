@@ -5,7 +5,6 @@ import FaqCard from './cards/faqCard.jsx';
 import ReportCard from './cards/reportCard.jsx';
 import './cardSection.css';
 
-import { useResponsive } from '../../hooks/useResponsive.jsx';
 import { useLayoutResize } from '../../hooks/useLayoutResize.jsx';
 
 

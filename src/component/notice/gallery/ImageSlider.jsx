@@ -23,7 +23,7 @@ export default function ImageSlider({ images, initialIndex = 0, onClose }) {
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleKeyDown]);
 
   if (!images || images.length === 0) return null;
 
