@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiClock, FiUser, FiEye, FiArrowLeft } from 'react-icons/fi';
@@ -15,11 +15,7 @@ export default function AnnouncementDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchNoticeDetail();
-  }, [id, fetchNoticeDetail]);
-
-  const fetchNoticeDetail = async () => {
+  const fetchNoticeDetail = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -32,7 +28,11 @@ export default function AnnouncementDetail() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchNoticeDetail();
+  }, [fetchNoticeDetail]);
 
   if (loading) {
     return (

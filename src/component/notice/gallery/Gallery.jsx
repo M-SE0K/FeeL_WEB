@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiEye, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import ImageSlider from './ImageSlider';
@@ -23,11 +23,7 @@ export default function Gallery() {
     { id: '기타', label: '기타' }
   ];
 
-  useEffect(() => {
-    fetchGalleries();
-  }, [currentPage, selectedCategory, fetchGalleries]);
-
-  const fetchGalleries = async () => {
+  const fetchGalleries = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -45,7 +41,11 @@ export default function Gallery() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [currentPage, selectedCategory]);
+
+  useEffect(() => {
+    fetchGalleries();
+  }, [fetchGalleries]);
 
   const handleSearch = async (e) => {
     e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import AnnouncementHeader from './AnnouncementHeader';
 import AnnouncementContent from './AnnouncementContent';
@@ -17,12 +17,7 @@ export default function AnnouncementList() {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  useEffect(() => {
-    fetchNotices();
-    fetchPinnedNotices();
-  }, [currentPage, selectedCategory, fetchNotices, fetchPinnedNotices]);
-
-  const fetchNotices = async () => {
+  const fetchNotices = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -40,9 +35,9 @@ export default function AnnouncementList() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [currentPage, selectedCategory]);
 
-  const fetchPinnedNotices = async () => {
+  const fetchPinnedNotices = useCallback(async () => {
     try {
       const response = await fetch(`${API_URL}/api/notices/pinned`);
       if (response.ok) {
@@ -52,7 +47,12 @@ export default function AnnouncementList() {
     } catch (err) {
       console.error('고정 공지사항 로드 실패:', err);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchNotices();
+    fetchPinnedNotices();
+  }, [fetchNotices, fetchPinnedNotices]);
 
   const handleSearch = async (e) => {
     e.preventDefault();

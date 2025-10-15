@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import './gallery.css';
@@ -6,19 +6,19 @@ import './gallery.css';
 export default function ImageSlider({ images, initialIndex = 0, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  }, [images.length]);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  }, [images.length]);
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     if (e.key === 'ArrowLeft') goToPrevious();
     if (e.key === 'ArrowRight') goToNext();
     if (e.key === 'Escape' && onClose) onClose();
-  };
+  }, [goToPrevious, goToNext, onClose]);
 
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
