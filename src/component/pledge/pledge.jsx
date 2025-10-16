@@ -8,56 +8,56 @@ function Pledge() {
   const pledgeData = {
     overall: {
       title: "전체 공약 이행률",
-      percentage: 75,
+      percentage: 71,
       color: "#004ca5"
     },
     categories: [
       {
         id: "culture",
         title: "문화/예술",
-        percentage: 80,
+        percentage: 62,
         color: "#ff6b6b",
         pledges: [
-          "학술제 개최 및 지원",
-          "E-sports 대회 개최",
-          "문화 행사 기획",
-          "동아리 지원 프로그램"
+          "공학체전",
+          "공과대학 E-sports 대회 개최",
+          "공과대학 축제",
+          "국토 대장정"
         ]
       },
       {
         id: "communication",
         title: "소통/복지",
-        percentage: 70,
+        percentage: 78,
         color: "#4ecdc4",
         pledges: [
-          "정기 소통 창구 운영",
-          "학우 의견 수렴 시스템",
-          "투명한 정책 결정 과정",
-          "학생 복지 정책 추진"
+          "찾아가는 공대 학생회",
+          "예비군 버스 지원",
+          "공대 월간 집필",
+          "시험기간 간식 사업"
         ]
       },
       {
         id: "employment",
         title: "취업/학습",
-        percentage: 65,
+        percentage: 60,
         color: "#45b7d1",
         pledges: [
-          "취업 지원 프로그램",
-          "학습 공간 확충",
-          "멘토링 프로그램",
-          "자격증 취득 지원"
+          "시험 기간 해동 활성화",
+          "전공 커리큘럼 로드맵",
+          "기업 인터뷰 큐레이터",
+          "장학금 알리미"
         ]
       },
       {
         id: "facility",
         title: "시설/안전",
-        percentage: 85,
+        percentage: 87,
         color: "#96ceb4",
         pledges: [
-          "낡은 시설 개선",
-          "편의 공간 확충",
-          "안전 시설 점검",
-          "쾌적한 환경 조성"
+          "흡연 구역 재정비",
+          "공과대학 호관별 지도",
+          "펌프형 비누 설치",
+          "무인 유료 프린터 유지/보수"
         ]
       }
     ]
