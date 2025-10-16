@@ -42,7 +42,7 @@ function HeaderBar({ isMobile }) {
       >
         <div className='header-left'>
           <div className="logo-size-lg">
-            <Link to="/">
+            <Link to="/FeeL_WEB">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={isAtTop ? 'blue' : 'white'}

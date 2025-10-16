@@ -93,8 +93,8 @@ const loadKakaoIfNeeded = () => {
     const key = process.env.REACT_APP_KAKAOAPIKEY;
     //const key = '1234567890';
     if (!key) {
-      console.error('[KAKAO] REACT_APP_KAKAOAPIKEY 가 .env에서 로드되지 않았습니다.');
-      return reject(new Error('Missing REACT_APP_KAKAOAPIKEY'));
+      console.warn('[KAKAO] REACT_APP_KAKAOAPIKEY가 설정되지 않았습니다. 지도 기능이 비활성화됩니다.');
+      return resolve(); // 에러 대신 성공으로 처리
     }
     if (window.kakao && window.kakao.maps) {
       if (window.kakao.maps.services) {
