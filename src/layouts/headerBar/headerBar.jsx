@@ -27,7 +27,7 @@ function HeaderBar({ isMobile }) {
   }, []);
 
   const p = (location.pathname || '').toLowerCase();
-  const isExempt = (p === '/' || p === '/about/intro' || p === '/feel_web');
+  const isExempt = (p === '/' || p === '/about/intro' || p === '/FeeL_WEB');
   const shouldBeBlueText = isAtTop && !isExempt;
 
   return (
@@ -42,7 +42,7 @@ function HeaderBar({ isMobile }) {
       >
         <div className='header-left'>
           <div className="logo-size-lg">
-            <Link to="/FeeL_WEB">
+            <Link to="/">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={isAtTop ? 'blue' : 'white'}
