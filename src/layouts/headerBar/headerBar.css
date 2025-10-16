@@ -19,11 +19,41 @@
   color: #004ca5 !important;
 }
 
+/* 스크롤하지 않았을 때 드롭다운 스타일 */
+.header-bar.at-top-blue .dropdown-container {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+}
+
+.header-bar.at-top-blue .dropdown-container a {
+  color: #004ca5 !important;
+}
+
+.header-bar.at-top-blue .dropdown-container a:hover {
+  background-color: #f0f8ff;
+  color: #004ca5 !important;
+}
+
 /* 스크롤 시: 흰 글씨 */
 .header-bar.header-scrolled .nav-list li a,
 .header-bar.header-scrolled .nav-list > li > ul,
 .header-bar.header-scrolled .nav-list > li > span,
 .header-bar.header-scrolled .nav-label {
+  color: white !important;
+}
+
+/* 스크롤했을 때 드롭다운 스타일 */
+.header-bar.header-scrolled .dropdown-container {
+  background-color: rgba(0, 76, 165, 0.95);
+  border: 1px solid rgba(0, 76, 165, 0.8);
+}
+
+.header-bar.header-scrolled .dropdown-container a {
+  color: white !important;
+}
+
+.header-bar.header-scrolled .dropdown-container a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   color: white !important;
 }
 
@@ -125,9 +155,10 @@
   background-color: rgb(255, 253, 253); /* 약간 투명 */
   min-width: 160px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  z-index: 10000; /* 헤더바보다 높은 z-index */
   border-radius: 1rem;
   padding: 0.5rem 0; 
+  backdrop-filter: blur(10px); /* 블러 효과 */
 }
 
 
