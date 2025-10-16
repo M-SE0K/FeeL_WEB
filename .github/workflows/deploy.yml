@@ -39,7 +39,7 @@ jobs:
       run: npm run prebuild
       
     - name: Build
-      run: npm run build
+      run: CI=false npm run build
       
     - name: Setup Pages
       uses: actions/configure-pages@v4

@@ -13,8 +13,6 @@ import AnnouncementDetail from './component/notice/announcement/AnnouncementDeta
 import Gallery from './component/notice/gallery/Gallery.jsx';
 import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
 import Pledge from './component/pledge/pledge.jsx';
-import PledgeList from './component/pledge/PledgeList.jsx';
-import CircularProgress from './component/pledge/CircularProgress.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
 import TopBar from './layouts/topBar/topBar.jsx';
