@@ -1,0 +1,121 @@
+.pledge-list {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 2px solid #dee2e6;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.pledge-list h4 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1e40af;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #007bff;
+  position: relative;
+}
+
+.pledge-list h4::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #007bff;
+  border-radius: 2px;
+}
+
+.pledge-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pledge-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.pledge-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.pledge-bullet {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.pledge-text {
+  font-size: 1.3rem;
+  color: #334155;
+  line-height: 1.6;
+  flex: 1;
+  font-weight: 600;
+}
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .pledge-list {
+    padding: 1rem;
+  }
+  
+  .pledge-list h4 {
+    font-size: 1.4rem;
+  }
+  
+  .pledge-item {
+    padding: 0.8rem;
+  }
+  
+  .pledge-text {
+    font-size: 1.1rem;
+  }
+  
+  .pledge-bullet {
+    font-size: 1.3rem;
+    margin-right: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pledge-list {
+    padding: 0.8rem;
+  }
+  
+  .pledge-list h4 {
+    font-size: 1.2rem;
+  }
+  
+  .pledge-item {
+    padding: 0.6rem;
+  }
+  
+  .pledge-text {
+    font-size: 1rem;
+  }
+  
+  .pledge-bullet {
+    font-size: 1.2rem;
+    margin-right: 0.6rem;
+  }
+}

@@ -79,7 +79,7 @@ function HeaderBar({ isMobile }) {
                     <li><Link to="/notice/announcement">공지사항</Link></li>
                     <li><Link to="/notice/calendar">월별 행사</Link></li>
                     <li><Link to="/notice/study-support">학습필력</Link></li>
-                    <li><Link to="/notice/promises">공약 이행률</Link></li>
+                    <li><Link to="/notice/pledge">공약 이행률</Link></li>
                     <li><Link to="/notice/gallery">갤러리</Link></li>
                   </div>
                 )}
