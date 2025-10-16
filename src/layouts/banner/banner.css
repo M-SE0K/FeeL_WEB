@@ -34,9 +34,9 @@
 }
 
 .banner-logo img {
-  height: 250px;
+  height: 100%;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   margin: 0;
   padding: 0;
   display: block;
@@ -124,7 +124,7 @@
 @media (max-width: 1200px) {
   .banner-logo img {
     height: 200px;
-    max-width: 400px;
+    max-width: 300px;
   }
   
   .banner-links {
@@ -139,7 +139,7 @@
 @media (max-width: 992px) {
   .banner-logo img {
     height: 180px;
-    max-width: 350px;
+    max-width: 300px;
   }
   
   .banner-links {

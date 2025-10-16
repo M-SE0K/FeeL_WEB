@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './cards.css'; // 공통 스타일을 공유해도 좋음
 import { FaHandPaper } from 'react-icons/fa';
 
 function ReportCard() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/contact');
+  };
+
   return (
-    <div className="card notice-card">
+    <div className="card notice-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
       <FaHandPaper size={40} />
       <h2>민원접수</h2>
       <p className='ReportCard-text'>불편사항이 있으시다면?<br/>지금 바로 접수해주세요!</p>
