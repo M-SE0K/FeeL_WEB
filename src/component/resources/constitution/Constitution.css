@@ -1,0 +1,366 @@
+.constitution-container {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 9rem;
+  padding: 2rem;
+  background: #f5f5f5;
+}
+
+.constitution-header {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.constitution-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #004ca5;
+  margin: 0;
+}
+
+.constitution-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  line-height: 1.8;
+}
+
+/* 목차 섹션 */
+.index-section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.section-title-main {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004ca5;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.index-content {
+  margin-top: 30px;
+}
+
+.index-item {
+  display: flex;
+  align-items: baseline;
+  margin: 12px 0;
+  font-size: 1.05rem;
+  color: #333;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.index-item:hover {
+  background-color: #f0f7ff;
+  color: #004ca5;
+  transform: translateX(5px);
+}
+
+.index-item:active {
+  transform: translateX(3px);
+}
+
+.index-item.sub {
+  margin-left: 30px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.index-item.sub:hover {
+  background-color: #f0f7ff;
+  color: #0066cc;
+}
+
+.index-chapter {
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.index-dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted #ccc;
+  margin: 0 15px;
+  min-width: 20px;
+}
+
+.index-page {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #004ca5;
+  min-width: 30px;
+  text-align: right;
+}
+
+/* 섹션 */
+.constitution-section {
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.constitution-section:last-child {
+  border-bottom: none;
+}
+
+/* 장 타이틀 */
+.chapter-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004ca5;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #004ca5;
+  text-align: center;
+}
+
+/* 절 타이틀 */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0066cc;
+  margin: 30px 0 20px;
+  padding-left: 15px;
+  border-left: 5px solid #0066cc;
+}
+
+/* 조문 */
+.article {
+  margin-bottom: 30px;
+}
+
+.article-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #004ca5;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.article-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.9;
+  margin: 10px 0;
+  text-align: justify;
+  word-break: keep-all;
+}
+
+.article-text.indent {
+  padding-left: 25px;
+  color: #555;
+  position: relative;
+}
+
+.article-text.indent::before {
+  content: '•';
+  position: absolute;
+  left: 10px;
+  color: #004ca5;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .constitution-content {
+    padding: 50px 40px;
+  }
+
+  .constitution-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-title-main {
+    font-size: 1.8rem;
+  }
+
+  .chapter-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .constitution-container {
+    padding: 40px 15px 60px;
+  }
+
+  .constitution-header {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+
+  .constitution-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .constitution-content {
+    padding: 40px 30px;
+  }
+
+  .section-title-main {
+    font-size: 1.6rem;
+  }
+
+  .chapter-title {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .article-title {
+    font-size: 1rem;
+  }
+
+  .article-text {
+    font-size: 0.95rem;
+  }
+
+  .index-item {
+    font-size: 0.95rem;
+  }
+
+  .index-item.sub {
+    font-size: 0.85rem;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .constitution-container {
+    padding: 30px 10px 50px;
+  }
+
+  .constitution-header {
+    padding: 25px 15px;
+    margin-bottom: 20px;
+  }
+
+  .constitution-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .constitution-content {
+    padding: 30px 20px;
+  }
+
+  .section-title-main {
+    font-size: 1.4rem;
+  }
+
+  .chapter-title {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    padding-left: 10px;
+  }
+
+  .article-title {
+    font-size: 0.95rem;
+  }
+
+  .article-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .article-text.indent {
+    padding-left: 20px;
+  }
+
+  .index-item {
+    font-size: 0.9rem;
+  }
+
+  .index-item.sub {
+    font-size: 0.8rem;
+    margin-left: 15px;
+  }
+
+  .constitution-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  .article {
+    margin-bottom: 25px;
+  }
+}
+
+/* 인쇄 스타일 */
+@media print {
+  .constitution-container {
+    background: white;
+    padding: 0;
+  }
+
+  .constitution-header,
+  .constitution-content {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .constitution-section {
+    page-break-inside: avoid;
+  }
+
+  .article {
+    page-break-inside: avoid;
+  }
+
+  .chapter-title,
+  .section-title {
+    page-break-after: avoid;
+  }
+}
+
+/* 스크롤바 스타일 */
+.constitution-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.constitution-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.constitution-content::-webkit-scrollbar-thumb {
+  background: #004ca5;
+  border-radius: 4px;
+}
+
+.constitution-content::-webkit-scrollbar-thumb:hover {
+  background: #003d82;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.constitution-header,
+.constitution-content {
+  animation: fadeIn 0.5s ease-out;
+}

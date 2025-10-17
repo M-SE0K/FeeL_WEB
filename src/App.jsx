@@ -12,6 +12,7 @@ import AnnouncementList from './component/notice/announcement/AnnouncementList.j
 import AnnouncementDetail from './component/notice/announcement/AnnouncementDetail.jsx';
 import Gallery from './component/notice/gallery/Gallery.jsx';
 import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
+import Constitution from './component/resources/constitution/Constitution.jsx';
 import Pledge from './component/pledge/pledge.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
@@ -44,6 +45,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/map" element={<BuildingMap />} />
+              <Route path="/resources/constitution" element={<Constitution />} />
               <Route path="/about/intro" element={<Intro />} />
               <Route path="/about/organization" element={<Organization />} />
               <Route path="/notice/pledge" element={<Pledge />} />
