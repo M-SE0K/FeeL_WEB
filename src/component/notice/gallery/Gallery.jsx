@@ -27,7 +27,7 @@ export default function Gallery() {
     setLoading(true);
     setError(null);
     try {
-      let url = `${API_URL}/api/gallery?page=${currentPage}&size=12`;
+      let url = `${API_URL}/api/gallery?page=${currentPage}&₩ize=12`;
       if (selectedCategory !== 'all') {
         url += `&category=${encodeURIComponent(selectedCategory)}`;
       }
