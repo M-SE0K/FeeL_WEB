@@ -42,7 +42,7 @@ jobs:
       run: CI=false npm run build
       env:
         REACT_APP_KAKAOAPIKEY: ${{ secrets.REACT_APP_KAKAOAPIKEY }}
-        REACT_APP_API_URL: ${{ vars.REACT_APP_API_URL }}
+        REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
