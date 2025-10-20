@@ -111,7 +111,7 @@ function HeaderBar({ isMobile }) {
                 {activeMenu === 'resources' && (
                   <div className="dropdown-container">
                     <li><Link to="/resources/map">공과대학 내부 지도</Link></li>
-                    <li><Link to="/resources/borrow-list">대여사업 물품 목록</Link></li>
+                    <li><Link to="/resources/rental">대여사업 물품 목록</Link></li>
                     <li><Link to="/resources/constitution">공과대학 학생회칙</Link></li>
                     <li><Link to="/resources/finance">회계 내역 공개</Link></li>
                     <li><Link to="/resources/inspection">시설 정기 점검 결과</Link></li>
@@ -180,7 +180,7 @@ function HeaderBar({ isMobile }) {
                       {activeMenu === 'resources' && (
                         <ul className="mobile-submenu">
                           <li><Link to="/resources/map" onClick={() => setMenuOpen(false)}>공과대학 내부 지도</Link></li>
-                          <li><Link to="/resources/borrow-list" onClick={() => setMenuOpen(false)}>대여사업 물품 목록</Link></li>
+                          <li><Link to="/resources/rental" onClick={() => setMenuOpen(false)}>대여사업 물품 목록</Link></li>
                           <li><Link to="/resources/constitution" onClick={() => setMenuOpen(false)}>공과대학 학생회칙</Link></li>
                           <li><Link to="/resources/finance" onClick={() => setMenuOpen(false)}>회계 내역 공개</Link></li>
                           <li><Link to="/resources/inspection" onClick={() => setMenuOpen(false)}>시설 정기 점검 결과</Link></li>

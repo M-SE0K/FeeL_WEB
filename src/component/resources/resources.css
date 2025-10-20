@@ -1,0 +1,226 @@
+/* 학생회 자료실 컨테이너 */
+.resources-container {
+  max-width: 1400px;
+  margin: 12vh auto 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 20vh);
+}
+
+/* 헤더 */
+.resources-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.resources-header h1 {
+  color: #0b1526;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.resources-header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 자료 카드 그리드 */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 자료 카드 */
+.resource-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border: 3px solid #e5e7eb;
+  border-radius: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.resource-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #2955a6 0%, #1e3d7a 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.resource-card:hover::before {
+  transform: scaleX(1);
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  border-color: #2955a6;
+  box-shadow: 0 12px 40px rgba(41, 85, 166, 0.2);
+}
+
+/* 색상 변형 */
+.resource-card.blue:hover {
+  border-color: #2955a6;
+}
+
+.resource-card.blue::before {
+  background: linear-gradient(90deg, #2955a6 0%, #1e3d7a 100%);
+}
+
+.resource-card.green:hover {
+  border-color: #10b981;
+}
+
+.resource-card.green::before {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.resource-card.purple:hover {
+  border-color: #8b5cf6;
+}
+
+.resource-card.purple::before {
+  background: linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+/* 아이콘 */
+.resource-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.resource-card:hover .resource-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* 제목 */
+.resource-card h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b1526;
+  margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.resource-card.blue:hover h2 {
+  color: #2955a6;
+}
+
+.resource-card.green:hover h2 {
+  color: #10b981;
+}
+
+.resource-card.purple:hover h2 {
+  color: #8b5cf6;
+}
+
+/* 설명 */
+.resource-card p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+/* 화살표 */
+.resource-arrow {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #9ca3af;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: auto;
+}
+
+.resource-card:hover .resource-arrow {
+  color: #2955a6;
+  transform: translateX(8px);
+}
+
+.resource-card.green:hover .resource-arrow {
+  color: #10b981;
+}
+
+.resource-card.purple:hover .resource-arrow {
+  color: #8b5cf6;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .resources-container {
+    padding: 1.5rem;
+  }
+
+  .resources-header h1 {
+    font-size: 2rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .resource-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .resources-container {
+    padding: 1rem;
+    margin-top: 15vh;
+  }
+
+  .resources-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .resources-header p {
+    font-size: 1rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .resource-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .resource-icon {
+    font-size: 3rem;
+  }
+
+  .resource-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .resource-card p {
+    font-size: 0.95rem;
+  }
+}
+

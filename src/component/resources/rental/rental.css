@@ -1,0 +1,354 @@
+/* 대여 물품 컨테이너 */
+.rental-container {
+  max-width: 1400px;
+  margin: 12vh auto 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 20vh);
+}
+
+/* 헤더 */
+.rental-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rental-header h1 {
+  color: #0b1526;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 검색 */
+.rental-search {
+  flex: 1;
+  max-width: 400px;
+}
+
+.rental-search-input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.rental-search-input:focus {
+  outline: none;
+  border-color: #2955a6;
+  box-shadow: 0 0 0 3px rgba(41, 85, 166, 0.1);
+}
+
+/* 카테고리 필터 */
+.rental-category-filter {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+}
+
+.rental-category-button {
+  padding: 0.6rem 1.5rem;
+  background: white;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.rental-category-button:hover {
+  border-color: #2955a6;
+  color: #2955a6;
+  box-shadow: 0 4px 8px rgba(41, 85, 166, 0.15);
+  transform: translateY(-2px);
+}
+
+.rental-category-button.active {
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  color: white;
+  border-color: #2955a6;
+  box-shadow: 0 4px 12px rgba(41, 85, 166, 0.3);
+}
+
+/* 통계 카드 */
+.rental-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.rental-stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.rental-stat-card:hover {
+  border-color: #2955a6;
+  box-shadow: 0 8px 24px rgba(41, 85, 166, 0.15);
+  transform: translateY(-4px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* 테이블 컨테이너 */
+.rental-table-container {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+/* 테이블 */
+.rental-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rental-table thead {
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+}
+
+.rental-table th {
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 800;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rental-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.rental-table tbody tr:hover {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  box-shadow: inset 0 0 0 2px #2955a6;
+}
+
+.rental-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.rental-table td {
+  padding: 1.2rem;
+  font-size: 1rem;
+  color: #0b1526;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.item-name {
+  font-weight: 700;
+  color: #0b1526;
+}
+
+/* 카테고리 배지 */
+.category-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.category-badge.학용품 {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+}
+
+.category-badge.생활용품 {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+}
+
+.category-badge.안전용품 {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+}
+
+.category-badge.체육용품 {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  color: #5b21b6;
+}
+
+/* 수량 배지 */
+.quantity-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+}
+
+.quantity-badge.low {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+}
+
+/* 검색 결과 없음 */
+.no-results {
+  text-align: center;
+  padding: 3rem !important;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* 안내 메시지 */
+.rental-notice {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 2px solid #93c5fd;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(41, 85, 166, 0.1);
+}
+
+.rental-notice h3 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.rental-notice ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #1e3a8a;
+}
+
+.rental-notice li {
+  margin: 0.6rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .rental-container {
+    padding: 1.5rem;
+  }
+
+  .rental-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .rental-container {
+    padding: 1rem;
+    margin-top: 15vh;
+  }
+
+  .rental-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rental-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .rental-search {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rental-category-filter {
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .rental-category-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .rental-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* 테이블 반응형 */
+  .rental-table-container {
+    overflow-x: auto;
+  }
+
+  .rental-table {
+    min-width: 600px;
+  }
+
+  .rental-table th,
+  .rental-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .rental-notice {
+    padding: 1.5rem;
+  }
+
+  .rental-notice h3 {
+    font-size: 1.1rem;
+  }
+
+  .rental-notice li {
+    font-size: 0.9rem;
+  }
+}
+
