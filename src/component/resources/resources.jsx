@@ -33,7 +33,7 @@ const resourceCards = [
     title: '시설 점검 결과',
     description: '공과대학 월별 시설 점검 현황을 확인할 수 있습니다.',
     icon: '📋',
-    link: '/resources/facility-inspection',
+    link: '/resources/inspection',
     color: 'orange'
   }
 ];

@@ -49,7 +49,7 @@ function App() {
               <Route path="/resources/map" element={<BuildingMap />} />
               <Route path="/resources/constitution" element={<Constitution />} />
               <Route path="/resources/rental" element={<Rental />} />
-              <Route path="/resources/facility-inspection" element={<FacilityInspection />} />
+              <Route path="/resources/inspection" element={<FacilityInspection />} />
               <Route path="/about/intro" element={<Intro />} />
               <Route path="/about/organization" element={<Organization />} />
               <Route path="/notice/pledge" element={<Pledge />} />
