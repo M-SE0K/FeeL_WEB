@@ -105,6 +105,14 @@
   background: linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%);
 }
 
+.resource-card.orange:hover {
+  border-color: #f97316;
+}
+
+.resource-card.orange::before {
+  background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
+}
+
 /* 아이콘 */
 .resource-icon {
   font-size: 4rem;
@@ -137,6 +145,10 @@
   color: #8b5cf6;
 }
 
+.resource-card.orange:hover h2 {
+  color: #f97316;
+}
+
 /* 설명 */
 .resource-card p {
   font-size: 1rem;
@@ -166,6 +178,10 @@
 
 .resource-card.purple:hover .resource-arrow {
   color: #8b5cf6;
+}
+
+.resource-card.orange:hover .resource-arrow {
+  color: #f97316;
 }
 
 /* 반응형 */
