@@ -178,6 +178,37 @@
   white-space: nowrap;
 }
 
+/* 슬라이더 아이템 스타일 */
+.dropdown-slider-item {
+  position: relative;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-slider-item > span {
+  display: block;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.dropdown-slider-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 슬라이더 드롭다운 래퍼 */
+.slider-dropdown-wrapper {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 10px;
+  z-index: 10001;
+}
+
+.dropdown-slider-item:hover .slider-dropdown-wrapper {
+  display: block;
+}
 
 /* hover 시 메뉴 열기 (PC용) */
 .dropdown:hover .dropdown-container {
