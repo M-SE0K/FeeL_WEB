@@ -12,6 +12,7 @@ import AnnouncementList from './component/notice/announcement/AnnouncementList.j
 import AnnouncementDetail from './component/notice/announcement/AnnouncementDetail.jsx';
 import Gallery from './component/notice/gallery/Gallery.jsx';
 import StudySupport from './component/notice/studySupport/StudySupport.jsx';
+import MonthlyCalendar from './component/notice/calendar/MonthlyCalendar.jsx';
 import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
 import Constitution from './component/resources/constitution/Constitution.jsx';
 import Rental from './component/resources/rental/Rental.jsx';
@@ -44,6 +45,7 @@ function App() {
               <Route path="/notice/announcement/:id" element={<AnnouncementDetail />} />
               <Route path="/notice/gallery" element={<Gallery />} />
               <Route path="/notice/study-support" element={<StudySupport />} />
+              <Route path="/notice/calendar" element={<MonthlyCalendar />} />
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resources" element={<Resources />} />
