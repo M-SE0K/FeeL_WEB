@@ -7,7 +7,7 @@ function ReportCard() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/contact');
+    navigate('/contact/report');
   };
 
   return (

@@ -1,0 +1,267 @@
+.report-container {
+  max-width: 900px;
+  margin: 8rem auto 0 auto;
+  padding: 3rem 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.report-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.report-main-icon {
+  font-size: 4rem;
+  color: #004ca5;
+  margin-bottom: 1rem;
+}
+
+.report-header h1 {
+  font-size: 2.5rem;
+  color: #004ca5;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.report-header p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.report-info-box {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f0fe 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 76, 165, 0.1);
+}
+
+.report-info-box h2 {
+  font-size: 1.5rem;
+  color: #004ca5;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.report-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-info-list li {
+  font-size: 1rem;
+  color: #333;
+  line-height: 2;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.report-info-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #004ca5;
+  font-weight: bold;
+}
+
+.report-kakao-section {
+  background: #fee500;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.kakao-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.kakao-icon {
+  font-size: 4rem;
+  color: #3c1e1e;
+  flex-shrink: 0;
+}
+
+.kakao-text {
+  flex: 1;
+}
+
+.kakao-text h3 {
+  font-size: 1.3rem;
+  color: #3c1e1e;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.kakao-text p {
+  font-size: 0.95rem;
+  color: #3c1e1e;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.kakao-button {
+  background: #3c1e1e;
+  color: #fee500;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 15px rgba(60, 30, 30, 0.3);
+  transition: all 0.3s ease;
+}
+
+.kakao-button:hover {
+  box-shadow: 0 6px 20px rgba(60, 30, 30, 0.4);
+}
+
+.button-icon {
+  font-size: 1.5rem;
+}
+
+.report-notice {
+  background: #fff3cd;
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 5px solid #ffc107;
+}
+
+.report-notice h3 {
+  font-size: 1.3rem;
+  color: #856404;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.report-notice ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-notice ul li {
+  font-size: 0.95rem;
+  color: #856404;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.report-notice ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* 태블릿 반응형 */
+@media (max-width: 1023px) {
+  .report-container {
+    margin-top: 7rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .report-header h1 {
+    font-size: 2rem;
+  }
+
+  .report-main-icon {
+    font-size: 3rem;
+  }
+
+  .kakao-icon {
+    font-size: 3rem;
+  }
+
+  .kakao-text h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 767px) {
+  .report-container {
+    margin-top: 7rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .report-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .report-header p {
+    font-size: 1rem;
+  }
+
+  .report-main-icon {
+    font-size: 2.5rem;
+  }
+
+  .report-info-box,
+  .report-kakao-section,
+  .report-notice {
+    padding: 1.5rem;
+  }
+
+  .report-info-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .report-info-list li {
+    font-size: 0.9rem;
+  }
+
+  .kakao-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .kakao-icon {
+    font-size: 3.5rem;
+  }
+
+  .kakao-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .kakao-text p {
+    font-size: 0.85rem;
+  }
+
+  .kakao-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .report-notice h3 {
+    font-size: 1.1rem;
+  }
+
+  .report-notice ul li {
+    font-size: 0.85rem;
+  }
+}
+

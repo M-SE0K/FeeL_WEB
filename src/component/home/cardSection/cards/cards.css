@@ -1,9 +1,8 @@
-.FaqCard-text, .AllianceCard-text, .NoticeCard-text, .ReportCard-text {
+.AllianceCard-text, .NoticeCard-text, .ReportCard-text {
     font-size: 1rem;
     font-weight: bold;
 }
 @media (max-width: 767px) {
-    .FaqCard-text,
     .AllianceCard-text,
     .NoticeCard-text,
     .ReportCard-text {

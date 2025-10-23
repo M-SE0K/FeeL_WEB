@@ -1,7 +1,6 @@
 import React from 'react';
 import NoticeCard from './cards/noticeCard.jsx';
 import AllianceCard from './cards/allianceCard.jsx';
-import FaqCard from './cards/faqCard.jsx';
 import ReportCard from './cards/reportCard.jsx';
 import './cardSection.css';
 
@@ -17,7 +16,6 @@ function CardSection({ isMobile, isTablet, isDesktop }) {
   const cards = [
     <div className="card1" key="1"><NoticeCard /></div>,
     <div className="card2" key="2"><AllianceCard /></div>,
-    <div className="card3" key="3"><FaqCard /></div>,
     <div className="card4" key="4"><ReportCard /></div>
   ];
 

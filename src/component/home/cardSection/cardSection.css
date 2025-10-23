@@ -11,12 +11,12 @@
 }
 
 /* 공통 카드 스타일 */
-.card1, .card2, .card3, .card4 {
+.card1, .card2, .card4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25%; /* 기본: 4개 가로 나열 (PC 환경) */
+  width: 33.33%; /* 기본: 3개 가로 나열 (PC 환경) */
   padding: 2rem;
   text-align: center;
   transition: transform 0.3s ease;
@@ -28,12 +28,10 @@
 /* 카드 색상 지정 */
 .card1 { background-color: #5a91d4; } /* 공지사항 */
 .card2 { background-color: #9bbbd4; } /* 제휴지도 */
-.card3 { background-color: #3f72af; } /* FAQ */
 .card4 { background-color: #5093df; } /* 민원접수 */
 
 .card1:hover,
 .card2:hover,
-.card3:hover,
 .card4:hover {
   transform: scale(1.15);
 }
@@ -42,25 +40,28 @@
   font-size: 5rem;
 }
 
-/* 📱 모바일: 2 x 2 Grid 레이아웃 */
+/* 📱 모바일: 3개 카드를 적절히 배치 */
 @media (max-width: 767px) {
   .card-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 두 개의 열 */
-    grid-template-rows: repeat(2, 1fr);    /* 두 개의 행 */
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
   }
 
-  .card1, .card2, .card3, .card4 {
-    width: 100%;   /* grid 내에서는 너비 자동 */
+  .card1, .card2, .card4 {
+    width: 50%;   /* 2개씩 배치 후 마지막 하나는 한 줄 차지 */
     padding: 1rem;
+  }
+  
+  .card4 {
+    width: 100%; /* 마지막 카드는 전체 너비 */
   }
 }
 
-/* 🧾 태블릿: 2개씩 2열 (flex 유지 가능) */
+/* 🧾 태블릿: 3개 카드를 적절히 배치 */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .card1, .card2, .card3, .card4 {
-    width: 50%;
+  .card1, .card2, .card4 {
+    width: 33.33%;
     padding: 2rem;
   }
 }

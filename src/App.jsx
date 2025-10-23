@@ -18,6 +18,7 @@ import Constitution from './component/resources/constitution/Constitution.jsx';
 import Rental from './component/resources/rental/Rental.jsx';
 import FacilityInspection from './component/resources/facilityInspection/FacilityInspection.jsx';
 import Pledge from './component/pledge/pledge.jsx';
+import Report from './component/contact/report/Report.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
 import Banner from './layouts/banner/banner.jsx';
 import TopBar from './layouts/topBar/topBar.jsx';
@@ -49,6 +50,7 @@ function App() {
               <Route path="/notice/calendar" element={<MonthlyCalendar />} />
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/contact/report" element={<Report />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/map" element={<BuildingMap />} />
               <Route path="/resources/constitution" element={<Constitution />} />

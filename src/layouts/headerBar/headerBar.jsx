@@ -98,8 +98,6 @@ function HeaderBar({ isMobile }) {
                 <ul>문의</ul>
                 {activeMenu === 'contact' && (
                   <div className="dropdown-container">
-                    <li><Link to="/contact/faq">FAQ</Link></li>
-                    <li><Link to="/contact/qna">Q&A</Link></li>
                     <li><Link to="/contact/board-help">게시판 이용 문의</Link></li>
                     <li><Link to="/contact/report">민원 접수</Link></li>
                   </div>
@@ -168,8 +166,6 @@ function HeaderBar({ isMobile }) {
                       <button className={`mobile-nav-button ${activeMenu === 'contact' ? 'active' : ''}`} onClick={() => toggleMenu('contact')}>문의</button>
                       {activeMenu === 'contact' && (
                         <ul className="mobile-submenu">
-                          <li><Link to="/contact/faq" onClick={() => setMenuOpen(false)}>FAQ</Link></li>
-                          <li><Link to="/contact/qna" onClick={() => setMenuOpen(false)}>Q&A</Link></li>
                           <li><Link to="/contact/board-help" onClick={() => setMenuOpen(false)}>게시판 이용 문의</Link></li>
                           <li><Link to="/contact/report" onClick={() => setMenuOpen(false)}>민원 접수</Link></li>
                         </ul>
