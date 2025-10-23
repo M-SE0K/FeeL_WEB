@@ -1,0 +1,382 @@
+/* 월별 행사 페이지 */
+.monthly-calendar-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 120px;
+  min-height: calc(100vh - 200px);
+}
+
+/* 페이지 타이틀 */
+.page-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.page-title p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* 캘린더 컨테이너 */
+.calendar-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 30px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* 캘린더 섹션 */
+.calendar-section {
+  min-height: 600px;
+}
+
+/* react-big-calendar 커스텀 스타일 */
+.big-calendar {
+  height: 100%;
+  font-family: inherit;
+}
+
+/* 툴바 스타일 */
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 12px;
+}
+
+.toolbar-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.toolbar-nav-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.toolbar-nav-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* 캘린더 셀 스타일 */
+.rbc-calendar {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rbc-header {
+  padding: 12px 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #666;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.rbc-date-cell {
+  padding: 8px;
+  text-align: right;
+}
+
+.rbc-today {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.rbc-off-range-bg {
+  background: #fafafa;
+}
+
+.has-event {
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.rbc-selected-cell {
+  background-color: rgba(76, 175, 80, 0.15);
+}
+
+.rbc-event {
+  padding: 2px 6px;
+  cursor: pointer;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+
+.rbc-event:hover {
+  opacity: 0.8;
+}
+
+/* 이벤트 내부 텍스트 생략 처리 */
+.rbc-event-content {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.rbc-event-label {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* 월 뷰에서 이벤트 최대 너비 제한 */
+.rbc-month-view .rbc-event {
+  max-width: calc(100% - 4px) !important;
+  box-sizing: border-box !important;
+}
+
+.rbc-row-segment {
+  padding: 0 1px 1px 1px;
+}
+
+/* 이벤트가 셀을 넘지 않도록 */
+.rbc-row-content {
+  overflow: hidden;
+  max-height: 100px;
+}
+
+.rbc-addons-dnd .rbc-event {
+  overflow: hidden !important;
+}
+
+/* 달력 행 높이 제한 */
+.rbc-month-row {
+  min-height: 100px;
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.rbc-row-bg {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 0;
+  overflow: hidden;
+}
+
+.rbc-day-bg {
+  flex: 1 0 0%;
+}
+
+/* 더보기 버튼 스타일 */
+.rbc-show-more {
+  color: #4CAF50;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.rbc-show-more:hover {
+  text-decoration: underline;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 3px;
+}
+
+/* 행사 섹션 */
+.events-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.events-box {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-header {
+  margin-bottom: 25px;
+}
+
+.events-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.selected-date {
+  font-size: 1.1rem;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+/* 행사 리스트 */
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.event-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.event-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.event-marker {
+  width: 6px;
+  min-width: 6px;
+  height: auto;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 3px;
+}
+
+.event-content {
+  flex: 1;
+}
+
+.event-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.event-date-range {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.no-events {
+  text-align: center;
+  color: #999;
+  font-size: 1rem;
+  padding: 40px 20px;
+}
+
+/* 반응형 - 태블릿 */
+@media (max-width: 1023px) {
+  .monthly-calendar-page {
+    padding: 30px 15px;
+    padding-top: 110px;
+  }
+
+  .calendar-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 25px;
+  }
+
+  .events-section {
+    min-height: 300px;
+  }
+
+  .page-title h1 {
+    font-size: 2rem;
+  }
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 767px) {
+  .monthly-calendar-page {
+    padding: 20px 10px;
+    padding-top: 100px;
+  }
+
+  .page-title {
+    margin-bottom: 30px;
+  }
+
+  .page-title h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-title p {
+    font-size: 1rem;
+  }
+
+  .calendar-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .calendar-section {
+    min-height: 400px;
+  }
+
+  .toolbar-label {
+    font-size: 1.1rem;
+  }
+
+  .toolbar-nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .rbc-header {
+    padding: 8px 3px;
+    font-size: 0.85rem;
+  }
+
+  .events-box {
+    padding: 20px;
+  }
+
+  .events-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .selected-date {
+    font-size: 1rem;
+  }
+
+  .event-item {
+    padding: 12px;
+  }
+
+  .event-title {
+    font-size: 0.95rem;
+  }
+
+  .event-date-range {
+    font-size: 0.85rem;
+  }
+}
