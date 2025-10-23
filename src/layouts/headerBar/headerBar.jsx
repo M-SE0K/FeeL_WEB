@@ -122,7 +122,12 @@ function HeaderBar({ isMobile }) {
 
         {isMobile && (
           <div className='header-right'>
-            <button className="menu-button" onClick={() => setMenuOpen(true)} aria-label="메뉴 열기">
+            <button 
+              className="menu-button" 
+              onClick={() => setMenuOpen(true)} 
+              aria-label="메뉴 열기"
+              style={{ color: shouldBeBlueText ? '#004ca5' : 'white' }}
+            >
               <HiMenu />
             </button>
             {menuOpen && (

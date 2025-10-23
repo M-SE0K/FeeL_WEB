@@ -135,10 +135,10 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: white;
   cursor: pointer;
   margin-right: 20px;
   display: none; /* 기본 숨김 */
+  transition: color 0.3s ease; /* 부드러운 색상 전환 */
 }
 
 /* 드롭다운 영역 설정 */
@@ -270,7 +270,6 @@
       display: block;
       background: none;
       border: none;
-      color: white;
       font-size: 2rem;
       align-self: flex-end;
       cursor: pointer;
