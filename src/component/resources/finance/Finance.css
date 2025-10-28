@@ -1,0 +1,786 @@
+/* 회계 내역 컨테이너 */
+.finance-container {
+  max-width: 1600px;
+  margin: 12vh auto 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 20vh);
+}
+
+/* 헤더 */
+.finance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.finance-header h1 {
+  color: #0b1526;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 검색 */
+.finance-search {
+  flex: 1;
+  max-width: 500px;
+}
+
+.finance-search-input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.finance-search-input:focus {
+  outline: none;
+  border-color: #2955a6;
+  box-shadow: 0 0 0 3px rgba(41, 85, 166, 0.1);
+}
+
+/* 카테고리 필터 */
+.finance-category-filter {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+}
+
+.finance-category-button {
+  padding: 0.6rem 1.5rem;
+  background: white;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.finance-category-button:hover {
+  border-color: #2955a6;
+  color: #2955a6;
+  box-shadow: 0 4px 8px rgba(41, 85, 166, 0.15);
+  transform: translateY(-2px);
+}
+
+.finance-category-button.active {
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  color: white;
+  border-color: #2955a6;
+  box-shadow: 0 4px 12px rgba(41, 85, 166, 0.3);
+}
+
+/* 요약 정보 */
+.finance-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0b1526;
+}
+
+.summary-value.total {
+  color: #2955a6;
+}
+
+.summary-value.event {
+  color: #10b981;
+}
+
+.summary-value.office {
+  color: #8b5cf6;
+}
+
+.summary-value.org {
+  color: #f97316;
+}
+
+.summary-value.other {
+  color: #6b7280;
+}
+
+.summary-value.income-org {
+  color: #10b981;
+}
+
+/* 비율 표시 */
+.summary-percentage {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* 프로그레스 바 */
+.summary-progress {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar.event {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.progress-bar.office {
+  background: linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.progress-bar.org {
+  background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
+}
+
+.progress-bar.other {
+  background: linear-gradient(90deg, #6b7280 0%, #4b5563 100%);
+}
+
+.income-summary-card {
+  border-color: #10b981 !important;
+}
+
+.income-summary-card:hover {
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* 테이블 래퍼 */
+.finance-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.finance-table-container {
+  overflow-x: auto;
+  min-width: 100%;
+}
+
+/* 테이블 */
+.finance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.finance-table thead {
+  background: linear-gradient(135deg, #2955a6 0%, #1e3d7a 100%);
+  color: white;
+}
+
+.finance-table th {
+  padding: 1rem 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.finance-table th:first-child {
+  border-radius: 16px 0 0 0;
+}
+
+.finance-table th:last-child {
+  border-radius: 0 16px 0 0;
+}
+
+.finance-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.finance-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.finance-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.finance-table td {
+  padding: 1rem 0.8rem;
+  text-align: left;
+  color: #0b1526;
+  vertical-align: top;
+}
+
+.finance-table .text-center {
+  text-align: center;
+}
+
+.finance-table .text-right {
+  text-align: right;
+}
+
+.finance-table .date {
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.finance-table .items-cell {
+  max-width: 250px;
+}
+
+.finance-table .item-detail {
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.finance-table .item-detail:last-child {
+  margin-bottom: 0;
+}
+
+.finance-table .amount {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.finance-table .total-amount {
+  font-weight: 900;
+  color: #2955a6;
+  white-space: nowrap;
+}
+
+.finance-table .remarks {
+  font-size: 0.85rem;
+  color: #6b7280;
+  max-width: 150px;
+}
+
+.finance-table .no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* 페이지네이션 */
+.finance-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.pagination-button {
+  padding: 0.6rem 1.5rem;
+  background: white;
+  color: #2955a6;
+  border: 2px solid #2955a6;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: #2955a6;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(41, 85, 166, 0.3);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 0.6rem 1rem;
+}
+
+/* 안내 메시지 */
+.finance-notice {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0efff 100%);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #2955a6;
+  margin-top: 2rem;
+}
+
+.finance-notice h3 {
+  color: #2955a6;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.finance-notice ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.finance-notice li {
+  color: #0b1526;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.finance-notice li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #2955a6;
+  font-weight: 900;
+}
+
+.finance-notice li:last-child {
+  margin-bottom: 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .finance-table {
+    font-size: 0.85rem;
+  }
+  
+  .finance-table th,
+  .finance-table td {
+    padding: 0.8rem 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .finance-container {
+    padding: 1rem;
+    margin-top: 15vh;
+  }
+
+  .finance-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .finance-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .finance-search {
+    max-width: 100%;
+  }
+
+  .finance-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .finance-table-wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .finance-table {
+    font-size: 0.8rem;
+    min-width: 1200px;
+  }
+
+  .finance-table th,
+  .finance-table td {
+    padding: 0.6rem 0.4rem;
+  }
+
+  .summary-value {
+    font-size: 1.2rem;
+  }
+
+  .finance-notice {
+    padding: 1.5rem;
+  }
+
+  .finance-notice h3 {
+    font-size: 1.1rem;
+  }
+
+  .finance-notice li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .finance-container {
+    padding: 0.5rem;
+  }
+
+  .finance-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .finance-category-filter {
+    padding: 0.8rem;
+  }
+
+  .finance-category-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .summary-card {
+    padding: 1rem;
+  }
+
+  .summary-value {
+    font-size: 1rem;
+  }
+
+  .summary-percentage {
+    font-size: 0.75rem;
+  }
+
+  .summary-progress {
+    height: 6px;
+  }
+}
+
+/* 수입 내역 관련 스타일 */
+.income-container {
+  max-width: 1600px;
+  margin: 12vh auto 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 20vh);
+}
+
+.income-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.income-header h1 {
+  color: #0b1526;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.income-category-filter {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-radius: 16px;
+  border: 2px solid #10b981;
+}
+
+.income-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.income-summary-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+  transition: all 0.3s ease;
+}
+
+.income-summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+}
+
+.income-summary-label {
+  font-size: 0.9rem;
+  color: #065f46;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.income-summary-value {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #10b981;
+}
+
+.income-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  border: 2px solid #10b981;
+  background: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}
+
+.income-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.income-table thead {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.income-table th {
+  padding: 1rem 0.8rem;
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.income-table th:first-child {
+  border-radius: 16px 0 0 0;
+}
+
+.income-table th:last-child {
+  border-radius: 0 16px 0 0;
+}
+
+.income-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.income-table tbody tr:hover {
+  background-color: #f0fdf4;
+}
+
+.income-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.income-table td {
+  padding: 1rem 0.8rem;
+  text-align: left;
+  color: #0b1526;
+  vertical-align: top;
+}
+
+.income-table .text-center {
+  text-align: center;
+}
+
+.income-table .text-right {
+  text-align: right;
+}
+
+.income-table .amount {
+  font-weight: 700;
+  color: #10b981;
+  white-space: nowrap;
+}
+
+.income-table .no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* 수입 카테고리별 색상 */
+.income-category-newbie {
+  color: #10b981;
+}
+
+.income-category-total-student {
+  color: #2955a6;
+}
+
+.income-category-goods {
+  color: #8b5cf6;
+}
+
+.income-category-sports-festival {
+  color: #f97316;
+}
+
+.income-category-walk {
+  color: #059669;
+}
+
+.income-category-other {
+  color: #6b7280;
+}
+
+/* 탭 스타일 */
+.finance-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.finance-tab {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.finance-tab:hover {
+  color: #2955a6;
+  background: #f9fafb;
+}
+
+.finance-tab.active {
+  color: #2955a6;
+  border-bottom-color: #2955a6;
+  background: #f9fafb;
+}
+
+.finance-tab.income-tab.active {
+  color: #10b981;
+  border-bottom-color: #10b981;
+  background: #f0fdf4;
+}
+
+/* 반응형 - 수입 관련 */
+@media (max-width: 768px) {
+  .income-container {
+    padding: 1rem;
+    margin-top: 15vh;
+  }
+
+  .income-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .income-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .income-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .income-table-wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .income-table {
+    font-size: 0.8rem;
+    min-width: 800px;
+  }
+
+  .income-table th,
+  .income-table td {
+    padding: 0.6rem 0.4rem;
+  }
+
+  .income-summary-value {
+    font-size: 1.2rem;
+  }
+
+  .finance-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .finance-tab {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .income-container {
+    padding: 0.5rem;
+  }
+
+  .income-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .income-summary-card {
+    padding: 1rem;
+  }
+
+  .income-summary-value {
+    font-size: 1rem;
+  }
+
+  .finance-tab {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+

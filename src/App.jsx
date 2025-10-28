@@ -17,6 +17,7 @@ import BuildingMap from './component/resources/buildingMap/BuildingMap.jsx';
 import Constitution from './component/resources/constitution/Constitution.jsx';
 import Rental from './component/resources/rental/Rental.jsx';
 import FacilityInspection from './component/resources/facilityInspection/FacilityInspection.jsx';
+import Finance from './component/resources/finance/Finance.jsx';
 import Pledge from './component/pledge/pledge.jsx';
 import Report from './component/contact/report/Report.jsx';
 import HeaderBar from './layouts/headerBar/headerBar.jsx';
@@ -55,6 +56,7 @@ function App() {
               <Route path="/resources/map" element={<BuildingMap />} />
               <Route path="/resources/constitution" element={<Constitution />} />
               <Route path="/resources/rental" element={<Rental />} />
+              <Route path="/resources/finance" element={<Finance />} />
               <Route path="/resources/inspection" element={<FacilityInspection />} />
               <Route path="/about/intro" element={<Intro />} />
               <Route path="/about/organization" element={<Organization />} />
